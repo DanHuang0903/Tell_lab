@@ -3,11 +3,19 @@
     width: 12rem;
 }
 #member-main {
-  background-image:url("../img/home_decor.png");
-  background-repeat: no-repeat;
-  background-size: contain;
+
+  overflow: hidden;
+  position: relative;
 
 }
+.bg-img {
+    opacity: 0.3;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
 
 #members-header {
     text-align: center;
@@ -18,19 +26,51 @@
 }
 
 .member-card{
-    width: 12rem;
-    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);   
-   
+    width: 13rem;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
 }
 
 .card-content{
     font-size: 0.9rem;
-    height: 7rem;
+    height: 9.5rem;
     background: linear-gradient(145deg, #fff 80%, #F1B82D);
-    
 }
 
 .member-card:hover {
-    box-shadow: 3px 4px 10px 3px rgba(0, 0, 0, 0.2);    
+    box-shadow: 3px 4px 10px 3px rgba(0, 0, 0, 0.2);   
+}
+.member-img{
+    height: 13rem;
+}
 
+.card-name{
+    font-size: large;
+    font-weight: bold;
+    color: #555;
+}
+
+.card-title{
+    font-size: small;
+}
+
+.member-intro{
+    height: 18rem;
+    background-image: url('../img/member_background.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+
+}
+
+.member-intro img{
+    height: 15rem;
+    border-radius: 6rem;
+    box-shadow: 3px 4px 10px 3px rgba(0, 0, 0, 0.2);   
+}
+.member-intro a{
+    text-decoration: none;
+}
+
+.no-email {
+    display: none;
 }

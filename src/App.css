@@ -88,8 +88,8 @@
 }
 
 .home-decor {
-  max-width: 50%;
-  height: auto;
+  height: 30rem;
+
 }
 
 #nav-img{
@@ -99,4 +99,56 @@
 
 #main-nav{
   font-size: small;
+}
+.nav-drop{
+  font-size: small;
+}
+.nav-drop p{
+  color: azure;
+}
+.icons {
+  width: 2rem;
+}
+.icons:hover{
+  animation-name: hithere;
+  animation-duration: 1s;
+}
+
+@keyframes rotate{
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
+@keyframes hithere {
+  30% { transform: scale(1.2); }
+  40%, 60% { transform: rotate(-20deg) scale(1.2); }
+  50% { transform: rotate(20deg) scale(1.2); }
+  70% { transform: rotate(0deg) scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.footer-icons{
+  text-align: center;
+}
+.footer-text {
+  color:azure;
+  text-align: center;
+  font-size: small;
+}
+.footer-text a{
+  color: azure;
+  text-decoration: none;
+}
+
+.home-show{
+  height: 30rem;
+  overflow: visible;
+}
+#home-car{
+
+}
+#car-body{
+  z-index: -2;
+}
+.project-img{
+  height: 30rem;
 }

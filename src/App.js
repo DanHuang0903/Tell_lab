@@ -1,10 +1,12 @@
 import './App.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import  { Members } from './pages/Members.js';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Carousel from 'react-bootstrap/Carousel';
 
 
 function Entrance(){
@@ -20,15 +22,8 @@ function Entrance(){
 }
 
 
-export function Member(){
-
-  return (
-    <>
-      <Members />
-    </>
-  )
-}
-export function Header(){
+export function Header()
+{
   return (
     <>
       <Navbar expand="lg" bg="light" variant="light" className='shadow'>
@@ -38,7 +33,7 @@ export function Header(){
           </Navbar.Brand>
           <Nav className="ms-3">
             <Nav.Link href="/home" className='me-3'>HOME</Nav.Link>
-            <NavDropdown title="PROJECTS" className='me-3'>
+            <NavDropdown title="PROJECTS" className='me-3 nav-drop'>
               <NavDropdown.Item href="#action3"></NavDropdown.Item>
               <NavDropdown.Item href="#action4">
                 Another action
@@ -49,17 +44,17 @@ export function Header(){
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="MEMBERS" className='me-3'>
-              <NavDropdown.Item href="/members/xinhaoxu">Dr. Xinhao Xu</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Hao He</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Jhon Bueno Vesga</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Gayathri Sadanala</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Shangman Li</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Yuanyuan Gu</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">ChenYu (Alice) Hung</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Jason Snyder</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Lanxin Xue</NavDropdown.Item>
+              <NavDropdown.Item href='/members/Xinhao' className='nav-drop'>Dr. Xinhao Xu</NavDropdown.Item>
+              <NavDropdown.Item href='/members/Hao' className='nav-drop'>Hao He</NavDropdown.Item>
+              <NavDropdown.Item href='/members/Jhon' className='nav-drop'>Jhon Bueno Vesga</NavDropdown.Item>
+              <NavDropdown.Item href='/members/Gayathri' className='nav-drop'>Gayathri Sadanala</NavDropdown.Item>
+              <NavDropdown.Item href='/members/Shangman' className='nav-drop'>Shangman Li</NavDropdown.Item>
+              <NavDropdown.Item href='/members/Yuanyuan' className='nav-drop'>Yuanyuan Gu</NavDropdown.Item>
+              <NavDropdown.Item href='/members/ChenYu' className='nav-drop'>ChenYu (Alice) Hung</NavDropdown.Item>
+              <NavDropdown.Item href='/members/Jason' className='nav-drop'>Jason Snyder</NavDropdown.Item>
+              <NavDropdown.Item href='/members/Lanxin' className='nav-drop'>Lanxin Xue</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
+              <NavDropdown.Item href='/members' className='nav-drop'>
               ALL
               </NavDropdown.Item>
             </NavDropdown>
@@ -73,32 +68,101 @@ export function Header(){
                 ALL
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="/" className='me-3'>NEWS</Nav.Link>
-            <Nav.Link href="/" className='me-3'>REGISTER</Nav.Link>
+            <Nav.Link href="/news" className='me-3'>NEWS</Nav.Link>
+            <Nav.Link href="https://docs.google.com/forms/d/e/1FAIpQLScyRncCDfMSkvhmIeIly8HD5zYNB0v04CTQXVZBQ7iraVHLGg/viewform" target='_blank' className='me-3'>REGISTER</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
     </>
-
-    // <div className='container-fluid m-0 p-0  shadow-lg'>
-    //   <nav className="navbar navbar-dark bg-dark" id='main-nav'>
-    //     <Link to='/home' id='nav-img'><img src={require('./img/navlogo.png')} alt='logo' width={70} className='ms-4'/>
-    //     </Link>
-    //     <Link to='/members' className='nav-item m-3'>Members
-    //     </Link>
-    //   </nav>
-    // </div>
   )
 }
 
+export function Footer(){
+  return  ( 
+    <>
+      <Row xs={3} md={3} className="g-5 bg-dark ps-5 pe-5 pb-5 m-0 justify-content-md-center footer-icons">
+        <Col>
+          <a href="https://twitter.com/MizzouTell" target='_blank' rel="noreferrer" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className='icons'> <path fill='#00acee' d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></a>
+        </Col>
+        <Col>
+        <a href="https://www.youtube.com/channel/UCTkzZP-OAtgFcDDMxXOsG-A" target='_blank' rel="noreferrer" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" className='icons'><path fill='#c4302b' d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></a>
+        </Col>
+        <Col>
+         <a href='mailto:tellmizzou@gmail.com'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className='icons'><path fill='#F1B82D' d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg></a>
+        </Col>
+      </Row>
+      <Row xs={1} md={1} className="g-3 bg-dark ps-5 pe-3 m-0 justify-content-md-center">
+        <Col className='footer-text'>
+          <p>&#169; {new Date().getFullYear()}: TELL Research Lab, All Rights Reserved</p>
+        </Col>
+      </Row>
+      <Row xs={1} md={1} className="g-2 bg-dark ps-5 pe-3 m-0 justify-content-md-center">
+        <Col className='footer-text'>
+          <p><a href='mailto:tellmizzou@gmail.com'>tellmizzou@gmail.com</a></p>
+        </Col>
+      </Row>
+      <Row xs={1} md={1} className="g-2 bg-dark ps-5 pe-3 m-0 justify-content-md-center">
+        <Col className='footer-text'>
+          <p>Developed by Dan Huang</p>
+        </Col>
+      </Row>
+
+    </>
+  )
+}
 
 export function Home(){
   return (
     <>
     <Header />
+
     <div id='home-header' className='container-fluid shadow p-0'>
-      <img className='home-decor' src={require('./img/home_decor.png')} alt='background'/>
+      <Row xs={1} md={1} className="home-show">
+   
+      <Col id='home-car'>
+      <Carousel id='car-body'>
+      <Carousel.Item>
+        <img
+          className="d-block project-img w-100"
+          src={require('./img/car-1.png')}
+          alt="project 1"
+        />
+        <Carousel.Caption>
+          <h3>VR Clinic Room</h3>
+          <p>A 3D virtual interactive environment to help 1st-year nursing students take the patient encounter training.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block project-img w-100"
+          src={require('./img/car-2.png')}
+          alt="project 2"
+        />
+
+        <Carousel.Caption>
+          <h3>CAVE Virtual Reality</h3>
+          <p>A immersive virtual reality (VR) system with a synchronized motion tracking system.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block project-img w-100"
+          src={require('./img/car-3.png')}
+          alt="Third slide"
+        />
+
+        <Carousel.Caption>
+          <h3>Virtual Reality Online Orientation (VRO2)</h3>
+          <p>
+          A VR learning environment aiming to offer the online orientation and training.
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+    </Col>
+    </Row>
     </div>
+    <Footer />
     </>
   )
 }
