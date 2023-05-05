@@ -1,0 +1,36 @@
+.member-img{
+    height: 12rem;
+    width: 12rem;
+}
+#member-main {
+  background-image:url("../img/home_decor.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+}
+
+#members-header {
+    text-align: center;
+}
+
+#members-container{
+    overflow: scroll;
+}
+
+.member-card{
+    width: 12rem;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);   
+   
+}
+
+.card-content{
+    font-size: 0.9rem;
+    height: 7rem;
+    background: linear-gradient(145deg, #fff 80%, #F1B82D);
+    
+}
+
+.member-card:hover {
+    box-shadow: 3px 4px 10px 3px rgba(0, 0, 0, 0.2);    
+
+}
