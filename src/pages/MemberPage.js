@@ -39,21 +39,25 @@ export function MemberPage(){
     return (
         <> 
             <Header />
-            <Row xs={2} md={2} className="g-3 member-intro shadow">
+            
+            <Row xs={2} md={2} className="container-fluid member-intro shadow m-0">
                 <Col>
-                <div  className='container ms-5 mt-3'>
+                <div  className='container mt-3'>
                     <img src={avatar} alt='avatar'/>
+                </div> 
+                <div  className='container mt-3 ms-3 member-header-mobile'>
+                        <h1>{name}</h1>
+                        <hr className='w-100'/>
+                        <p>{position}</p>
                 </div>
+             
                 </Col>
-                <Col>
-                 <Row xs={1} md={1} className="g-1 mt-3">
+                <Col className='mt-5'  id='member-header'>
                     <div>
                         <h1>{name}</h1>
                         <hr className='w-50'/>
                     </div>
-                 </Row>
-                 
-                 <Row xs={1} md={1} className="g-1">
+                 <Row xs={1} md={1} className="container-fluid">
                     <div>
                         <h3>{position}</h3>
                         <p>{title}</p>
@@ -63,13 +67,24 @@ export function MemberPage(){
                  </Row>
                 </Col>
             </Row>
-            <Row xs={1} md={1} className="g-1 ps-5 mt-5">
-                <Col className='container'>
+            
+            <Row xs={1} md={1} className='container mt-5 member-content'>
+                <Col>
+            <Row className='member-header-mobile ms-3 mb-3'>
+            <div>
+                        <p>{title}</p>
+                        <p className={email == '' ? 'no-email' : 'has-email'}><a href={'mailto:' + email}><FontAwesomeIcon icon={faEnvelope} /> {email}</a></p>
+                        <p><a key={url} href={link}> {linkName}</a></p>
+                    </div>
+            </Row>
+      
+            <Row className="container ms-3">
+
                     <h1>BIO</h1>
                     <p>{BIO}</p>
-                </Col>
+  
             </Row>
-            <Row xs={1} md={1} className="g-1 ps-5 mt-5">
+            <Row xs={1} md={1} className="mt-5 memeber-conten ms-3">
                 {more.map((value,index)=>(
                     <div className='container'>
                         <h3>{value['name']}</h3>
@@ -82,6 +97,11 @@ export function MemberPage(){
   
                 ))}
             </Row>
+           
+            </Col>
+  
+            </Row>
+            
         <Footer />
         </>
     )

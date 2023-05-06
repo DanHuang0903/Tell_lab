@@ -17,7 +17,7 @@ export function Members(){
                 <Row xs={2} md={4} className="g-5">
                 {memberInfo.map((value,index)=>(
                     <Col key={index}>
-                    <Card className='member-card m-4'>
+                    <Card className='member-card'>
                         <a key={index} href={'/members/'+value['url']}>
                         <Card.Img className='member-img' variant='top' src={value['avatar']} alt='avatar'/>
                         </a>
@@ -29,7 +29,7 @@ export function Members(){
                             <Card.Text className='card-title'>
                             {value['position']}
                             </Card.Text>
-                            <Card.Text className='card-title'>
+                            <Card.Text className='card-title subtitle'>
                             {value['title']}
                             </Card.Text>
                         </Card.Body>

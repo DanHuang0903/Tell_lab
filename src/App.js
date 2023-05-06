@@ -1,5 +1,6 @@
 import './App.css';
 import { Link } from 'react-router-dom';
+import { peopleImg } from './JSON/people.js';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -27,6 +28,18 @@ function Entrance(){
 
 export function Header()
 {
+  const handleClick= ()=>{
+    let button = document.getElementById('sm-nav');
+    let lgNav = document.getElementById('m-nav');
+    if(button.classList.contains('active')){
+      button.classList.remove('active');
+      lgNav.classList.remove('active');
+    }else{
+      button.classList.add('active');
+      lgNav.classList.add('active');
+    }
+  }
+
   return (
     <>
       <Navbar expand="lg" bg="light" variant="light" className='shadow'>
@@ -34,7 +47,15 @@ export function Header()
           <Navbar.Brand href='/home'>
           <img id='nav-img' src={require('./img/navlogo.png')} alt='logo' width={60}/>
           </Navbar.Brand>
-          <Nav className="ms-3">
+
+            <button id='sm-nav' className='navbar-btn hoverale' onClick={handleClick}>
+            <span></span>
+            <span></span>
+            <span></span>
+
+          </button>
+
+          <Nav className="ms-3" id='lg-nav'>
             <Nav.Link href="/home" className='me-3'>HOME</Nav.Link>
             <NavDropdown title="PROJECTS" className='me-3'>
               <NavDropdown.Item href="/projects/VR02" className='nav-drop'>Virtual Reality Online Orientation (VRO2)</NavDropdown.Item>
@@ -84,6 +105,54 @@ export function Header()
           </Nav>
         </Container>
       </Navbar>
+      <Nav className="ms-3" id='m-nav'>
+            
+            <NavDropdown title="PROJECTS" className='me-3'>
+              <NavDropdown.Item href="/projects/VR02" className='nav-drop'>Virtual Reality Online Orientation (VRO2)</NavDropdown.Item>
+              <NavDropdown.Item href="/projects/VR-Clinic" className='nav-drop'>
+              Virtual Reality Clinic Room
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/projects/iVRLab" className='nav-drop'>
+              Immersive VRLab Training (iVRLab)
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/projects/VR-Graduation" className='nav-drop'>
+              Virtual Reality Graduation Celebration amidst the Pandemic
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/projects/CAVE" className='nav-drop'>
+              CAVE Virtual Reality
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/projects/VR-Media" className='nav-drop'>
+              VR Media Gallery
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="MEMBERS" className='me-3'>
+              <NavDropdown.Item href='/members/Xinhao' className='nav-drop'>Dr. Xinhao Xu</NavDropdown.Item>
+              <NavDropdown.Item href='/members/Hao' className='nav-drop'>Hao He</NavDropdown.Item>
+              <NavDropdown.Item href='/members/Jhon' className='nav-drop'>Jhon Bueno Vesga</NavDropdown.Item>
+              <NavDropdown.Item href='/members/Gayathri' className='nav-drop'>Gayathri Sadanala</NavDropdown.Item>
+              <NavDropdown.Item href='/members/Shangman' className='nav-drop'>Shangman Li</NavDropdown.Item>
+              <NavDropdown.Item href='/members/Yuanyuan' className='nav-drop'>Yuanyuan Gu</NavDropdown.Item>
+              <NavDropdown.Item href='/members/ChenYu' className='nav-drop'>ChenYu (Alice) Hung</NavDropdown.Item>
+              <NavDropdown.Item href='/members/Jason' className='nav-drop'>Jason Snyder</NavDropdown.Item>
+              <NavDropdown.Item href='/members/Lanxin' className='nav-drop'>Lanxin Xue</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href='/members' className='nav-drop'>
+              ALL
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="SCHOLARLY PRODUCTS" className='me-3'>
+              <NavDropdown.Item href="#action3"></NavDropdown.Item>
+              <NavDropdown.Item href="#action4">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action5">
+                ALL
+              </NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link href="/news" className='me-3'>NEWS</Nav.Link>
+            <Nav.Link href="https://docs.google.com/forms/d/e/1FAIpQLScyRncCDfMSkvhmIeIly8HD5zYNB0v04CTQXVZBQ7iraVHLGg/viewform" target='_blank' className='me-3'>REGISTER</Nav.Link>
+          </Nav>
     </>
   )
 }
@@ -126,7 +195,27 @@ export function Home(){
   return (
     <>
     <Header />
-
+    <div id='home-header-m' className='container-fluid shadow p-0'>
+    <Row xs={1} md={2} className='container-fluid'>
+          <Col>
+          <Carousel className='shadow-lg'>
+        {peopleImg.map((value, index)=>(
+          <Carousel.Item>
+          <img
+            className="d-block project-img w-100 h-50"
+            src={value.img}
+            alt={index}
+          />
+          <Carousel.Caption>
+          <p>{value.text}</p>
+          
+        </Carousel.Caption>
+        </Carousel.Item>
+        ))}
+        </Carousel>
+        </Col>
+        </Row>
+    </div>
     <div id='home-header' className='container-fluid shadow p-0'>
       <Row xs={1} md={1} className="home-show">
    
