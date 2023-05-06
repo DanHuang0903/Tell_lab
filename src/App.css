@@ -24,9 +24,7 @@
 
 
 #logo {
-  background-image:url("./img/name.png");
-  background-repeat: no-repeat;
-  background-size: 65%,65%;
+  font-family: 'Heiti TC';
   width: 70%;
   height: 30%;
   margin-left: 10%;
@@ -143,12 +141,45 @@
   height: 30rem;
   overflow: visible;
 }
-#home-car{
 
-}
 #car-body{
   z-index: -2;
 }
 .project-img{
   height: 30rem;
+}
+#desc-img{
+  height: 10rem;
+  text-align: center;
+  font-family:'Heiti TC';
+}
+
+#desc-img img{
+  height: 7rem;
+  margin-right: 2rem;
+}
+#home-content{
+  
+}
+#desc{
+  background-image: url('./img/small-decor.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  font-family:'Heiti TC';
+}
+
+#desc a{
+  text-decoration: none;
+}
+#desc img{
+  width: 3.4rem;
+  margin-right: 1rem;
+}
+
+
+#about{
+    font-family:'Heiti TC';
+
+    
 }

@@ -7,13 +7,14 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Carousel from 'react-bootstrap/Carousel';
+import Card from 'react-bootstrap/Card';
 
 
 function Entrance(){
   return(
     <>
     <div id='main-background'>
-      <div id='logo'></div>
+      <div id='logo'><h2><img src={require('./img/logo.png')} alt='logo'/>Technology to Enhance Learning Lab</h2></div>
       <Link type='button' id='enter' className='btn btn-dark' to='/home'> Expore </Link>
     </div>
     <img id='img' src={require('./img/main_background.png')} alt='background' />
@@ -161,6 +162,32 @@ export function Home(){
     </Carousel>
     </Col>
     </Row>
+    </div>
+    <div className='container-fluid' id='home-content'>
+    <Row xs={1} md={1}  id='desc-img' className='justify-content-md-center'>
+      <Col className='m-5 justify-content-md-center'>
+       <h2> <img src={require('./img/logo.png')} alt='name'/>Technology to Enhance Learning Lab</h2>
+      </Col>
+    </Row>
+    <Row xs={1} md={1} >
+      <Col className='m-5 shadow p-5' id='desc'>
+      <h2>About Us</h2>
+      <hr/>
+      <p><b>We are a research lab afiliated to the <a href='https://education.missouri.edu/information-science-learning-technologies/' target='_blank' rel="noreferrer" >School of Information Science and Learning Technologies</a> of the <a href='https://missouri.edu/' target='_blank' rel="noreferrer">University of Missouri – Columbia</a> focusing on…</b></p>
+      <br/>
+      <p><img src={require('./img/logo.png')} alt='logo'/><b>Mixed-Reality-Based Learning Environments</b></p>
+      <p><img src={require('./img/logo.png')} alt='logo'/><b>Embodied Interactions and Learning</b></p>
+      <p><img src={require('./img/logo.png')} alt='logo'/><b>Learning Games for STEM Subjects and Computational Thinking</b></p>
+      <p><img src={require('./img/logo.png')} alt='logo'/><b>Novel Technologies for Instructions and Learning</b></p>
+      </Col>
+    </Row>
+    <Row xs={1} md={1} id='about'>
+      <Col className='m-5 shadow p-5'>
+        <h2>Reserch Projects</h2>
+        <hr/>
+      </Col>
+    </Row>
+
     </div>
     <Footer />
     </>
