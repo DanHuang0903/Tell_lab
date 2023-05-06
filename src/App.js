@@ -7,6 +7,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Carousel from 'react-bootstrap/Carousel';
+import { projectInfo } from './JSON/projectInfo.js';
+import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 
@@ -34,14 +36,22 @@ export function Header()
           </Navbar.Brand>
           <Nav className="ms-3">
             <Nav.Link href="/home" className='me-3'>HOME</Nav.Link>
-            <NavDropdown title="PROJECTS" className='me-3 nav-drop'>
-              <NavDropdown.Item href="#action3"></NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
+            <NavDropdown title="PROJECTS" className='me-3'>
+              <NavDropdown.Item href="/projects/VR02" className='nav-drop'>Virtual Reality Online Orientation (VRO2)</NavDropdown.Item>
+              <NavDropdown.Item href="/projects/VR-Clinic" className='nav-drop'>
+              Virtual Reality Clinic Room
               </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                ALL
+              <NavDropdown.Item href="/projects/iVRLab" className='nav-drop'>
+              Immersive VRLab Training (iVRLab)
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/projects/VR-Graduation" className='nav-drop'>
+              Virtual Reality Graduation Celebration amidst the Pandemic
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/projects/CAVE" className='nav-drop'>
+              CAVE Virtual Reality
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/projects/VR-Media" className='nav-drop'>
+              VR Media Gallery
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="MEMBERS" className='me-3'>
@@ -129,8 +139,8 @@ export function Home(){
           alt="project 1"
         />
         <Carousel.Caption>
-          <h3>VR Clinic Room</h3>
-          <p>A 3D virtual interactive environment to help 1st-year nursing students take the patient encounter training.</p>
+          <p>TELL Team at VR Clinic Project</p>
+          
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -141,8 +151,7 @@ export function Home(){
         />
 
         <Carousel.Caption>
-          <h3>CAVE Virtual Reality</h3>
-          <p>A immersive virtual reality (VR) system with a synchronized motion tracking system.</p>
+        <p>TELL Team at CAVE Virtual Reality Project</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -153,10 +162,18 @@ export function Home(){
         />
 
         <Carousel.Caption>
-          <h3>Virtual Reality Online Orientation (VRO2)</h3>
-          <p>
-          A VR learning environment aiming to offer the online orientation and training.
-          </p>
+        <p>TELL Team at CAVE Virtual Reality Project</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block project-img w-100"
+          src={require('./img/car-4.png')}
+          alt="4th slide"
+        />
+
+        <Carousel.Caption>
+        <p>TELL Team at VR Clinic Project</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
@@ -165,15 +182,15 @@ export function Home(){
     </div>
     <div className='container-fluid' id='home-content'>
     <Row xs={1} md={1}  id='desc-img' className='justify-content-md-center'>
-      <Col className='m-5 justify-content-md-center'>
+      <Col className='m-5'>
        <h2> <img src={require('./img/logo.png')} alt='name'/>Technology to Enhance Learning Lab</h2>
       </Col>
     </Row>
-    <Row xs={1} md={1} >
+    <Row xs={1} md={1} id='how-row1'>
       <Col className='m-5 shadow p-5' id='desc'>
       <h2>About Us</h2>
       <hr/>
-      <p><b>We are a research lab afiliated to the <a href='https://education.missouri.edu/information-science-learning-technologies/' target='_blank' rel="noreferrer" >School of Information Science and Learning Technologies</a> of the <a href='https://missouri.edu/' target='_blank' rel="noreferrer">University of Missouri – Columbia</a> focusing on…</b></p>
+      <p><b>We are a research lab afiliated to the <a href='https://education.missouri.edu/information-science-learning-technologies/' target='_blank' rel="noreferrer" >School of Information Science and Learning Technologies</a> of the <a href='https://missouri.edu/' target='_blank' rel="noreferrer">University of Missouri – Columbia</a> focusing on</b></p>
       <br/>
       <p><img src={require('./img/logo.png')} alt='logo'/><b>Mixed-Reality-Based Learning Environments</b></p>
       <p><img src={require('./img/logo.png')} alt='logo'/><b>Embodied Interactions and Learning</b></p>
@@ -181,10 +198,28 @@ export function Home(){
       <p><img src={require('./img/logo.png')} alt='logo'/><b>Novel Technologies for Instructions and Learning</b></p>
       </Col>
     </Row>
-    <Row xs={1} md={1} id='about'>
-      <Col className='m-5 shadow p-5'>
+    <Row xs={1} md={1} >
+      <Col className='m-5 shadow p-5' id='about'>
         <h2>Reserch Projects</h2>
         <hr/>
+        <Carousel slide={false} variant="dark">
+      {projectInfo.map((value,index)=>(
+        <Carousel.Item>
+          <Row xs={1} md={2}>
+            <Col>
+                <img src={value.imgs!=''?value.imgs[0]:require('./img/logo.png')} alt={value.name} className='home-projects'/>
+            </Col>
+            <Col className='mt-4'>
+              <h4 className='project-title'>{value.name}</h4>
+              <p>{value.subtitle}</p>
+              <Button variant="dark" href={'/projects/'+value.project}>Learn More</Button>
+            </Col>
+          </Row>
+
+        </Carousel.Item>
+
+      ))}
+      </Carousel>
       </Col>
     </Row>
 

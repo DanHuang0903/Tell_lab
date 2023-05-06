@@ -86,7 +86,7 @@
 }
 
 .home-decor {
-  height: 30rem;
+  height: 35rem;
 
 }
 
@@ -138,7 +138,7 @@
 }
 
 .home-show{
-  height: 30rem;
+  height: 35rem;
   overflow: visible;
 }
 
@@ -146,7 +146,7 @@
   z-index: -2;
 }
 .project-img{
-  height: 30rem;
+  height: 35rem;
 }
 #desc-img{
   height: 10rem;
@@ -158,15 +158,32 @@
   height: 7rem;
   margin-right: 2rem;
 }
-#home-content{
-  
-}
+
 #desc{
-  background-image: url('./img/small-decor.png');
+  background-image: url('./img/black-decor-sm.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
   font-family:'Heiti TC';
+  animation: back 1s ease;
+  transform: translateX(5rem);
+}
+
+#desc:hover{
+  animation: out 1s ease;
+  transform: translateX(0em);
+
+}
+
+
+@keyframes out{
+  0% { transform: translateX(5rem);}
+  100%{transform: translateX(0em);}
+}
+
+@keyframes back{
+  0% { transform: translateX(0rem);}
+  100%{transform: translateX(5em);}
 }
 
 #desc a{
@@ -179,7 +196,27 @@
 
 
 #about{
-    font-family:'Heiti TC';
+  font-family:'Heiti TC';
+  background-image: url('./img/small-decor.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  animation: back 1s ease;
+  transform: translateX(5rem);
+}
+#about:hover{
+  animation: out 1s ease;
+  transform: translateX(0em);
 
-    
+}
+
+.project-title {
+  font-family:'Heiti TC';
+}
+.project-detail{
+  white-space: pre-line;
+}
+.home-projects{
+  height: 20rem;
+  width: 30rem;
 }
