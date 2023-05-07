@@ -71,6 +71,16 @@
   100%{transform: translateY(36rem) translateX(0rem); opacity: 1;}
 }
 
+@keyframes fly-in-t {
+  0%{ transform: translateY(-27rem) translateX(0rem);opacity: 0;}
+  100%{transform: translateY(0rem) translateX(0rem); opacity: 1;}
+}
+
+@keyframes fly-in-b {
+  0%{transform: translateY(27rem) translateX(0rem);opacity: 0;}
+  100%{transform: translateY(0rem) translateX(0rem); opacity: 1;}
+}
+
 @keyframes fly-in {
   0%{ margin-left: -100%;opacity: 0;}
   100%{margin-left: 0; opacity: 1;}
@@ -237,6 +247,16 @@
   background-position: top right;
 }
 
+#news-header {
+  font-family:'Heiti TC';
+  background-image: url('./img/member_background.png');
+  background-repeat: no-repeat;
+  background-size: 30%,auto;
+  background-position: right;
+}
+
+
+
 @media screen and (min-width:561px){
   #home-header-m{
     display: none;
@@ -251,7 +271,13 @@
     display: none;
   }
 
+  .news-tab{
+    font-size: 1.3rem;
 
+  }
+  #m-background{
+    display: none;
+  } 
 }
 
 @media screen and (max-width:560px){
@@ -359,6 +385,66 @@
 #conf,#pub{
   background-size: 30%,auto;
 
+}
+#main-background, #img {
+  display: none;
+} 
+#m-background{
+  width: 100%;
+  height: 100%;
+} 
+
+#img-m1, #img-m2{
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top right;
+  height: 27rem;
+  width: auto;
+
+  
+}
+#img-m1 {
+  background-image: url('./img/small-decor-m.png');
+  animation: fly-in-t 1s ease;
+}
+#img-m2{
+  background-image: url('./img/small-decor.png');
+  animation: fly-in-b 1s ease;
+
+  
+}
+#m-logo img {
+  width: 60%;
+  height: 60%;
+}
+#enter-m-btn{
+  float: absolute;
+  right: 0rem;
+  bottom: 0rem;
+}
+#btn-row{
+  height: 10rem;
+}
+
+.m-txt{
+  padding-top: 0rem;
+}
+#m-logo{
+  margin-top: 10rem;
+}
+
+#p1-m,#p2-m,#p3-m,#p4-m{
+  transform: translateY(-30rem) translateX(0rem);
+  animation-name: fly-in-l-m;
+  animation-duration: 1s;
+
+}
+
+
+@keyframes fly-in-l-m {
+  0%{ transform: translateY(-30rem) translateX(-50rem);opacity: 0;}
+  100%{transform: translateY(-30rem) translateX(0rem); opacity: 1;}
 }
 
 }

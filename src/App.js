@@ -22,6 +22,38 @@ function Entrance(){
       <Link type='button' id='enter' className='btn btn-dark' to='/home'> Expore </Link>
     </div>
     <img id='img' src={require('./img/main_background.png')} alt='background' />
+    <div id='m-background'>
+    
+    <Row id='img-m1'>
+    <Row id='m-logo'>
+        <img src={require('./img/home-header-m.png')} alt='logo'/>
+      </Row>
+      
+        
+    </Row>
+    <Row  id='img-m2'>
+      <Row id='btn-row'></Row>
+      <Row>
+        <Col className='container m-5'>
+        
+            <Link type='button' className='btn btn-dark btn-sm shadow' id='enter-m-btn' to='/home'> Expore </Link>
+        
+        </Col>
+       
+      </Row>
+    </Row>
+    <Row className='container m-txt ms-2' id='enter-m-txt'>
+        <p id='p1-m'>Mixed-Reality-Based Learning Environments</p>
+        <br/>
+        <p id='p2-m'>Embodied Interactions and Learning</p>
+        <br/>
+        <p id='p3-m'>Learning Games for STEM Subjects and Computational Thinking</p>
+        <br/>
+        <p id='p4-m'>Novel Technologies for Instructions and Learning</p>
+        </Row>
+    </div>
+
+    
     </>
   )
 }
