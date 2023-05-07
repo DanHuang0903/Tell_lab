@@ -159,20 +159,29 @@
   margin-right: 2rem;
 }
 
-#desc{
-  background-image: url('./img/black-decor-sm.png');
+#desc, #news{
+  background-image: url('./img/small-decor.png');
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right;
+  background-size: auto,40%;
+  background-position: bottom right;
   font-family:'Heiti TC';
   animation: back 1s ease;
   transform: translateX(5rem);
+
 }
 
 #desc:hover{
   animation: out 1s ease;
   transform: translateX(0em);
 
+}
+#news:hover{
+  animation: out 1s ease;
+  transform: translateX(0em);
+}
+
+#how-row3,#how-row2,#how-row1{
+  overflow: hidden;
 }
 
 
@@ -197,10 +206,10 @@
 
 #about{
   font-family:'Heiti TC';
-  background-image: url('./img/small-decor.png');
+  background-image: url('./img/black-decor-sm.png');
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right;
+  background-size: auto,40%;
+  background-position: bottom right;
   animation: back 1s ease;
   transform: translateX(5rem);
 }
@@ -221,6 +230,13 @@
   width: 30rem;
 }
 
+#conf,#pub{
+  background-image: url('./img/small-decor-m2.png');
+  background-repeat: no-repeat;
+  background-size: 20%,auto;
+  background-position: top right;
+}
+
 @media screen and (min-width:561px){
   #home-header-m{
     display: none;
@@ -231,7 +247,13 @@
   #m-nav {
     display: none;
   }
+  #home-page-m {
+    display: none;
+  }
+
+
 }
+
 @media screen and (max-width:560px){
   
   #lg-nav{
@@ -296,4 +318,47 @@
 #home-header-m{
   display: block;
 }
+
+#home-header-m img{
+  width: 75%;
+  
+}
+
+#home-content{
+  display: none;
+}
+
+#about-m {
+  background-image: url('./img/small-decor-m.png');
+  background-repeat: no-repeat;
+  background-size: 30%,auto;
+  background-position: top right;
+}
+#home-row-m2{
+  background-image: url('./img/small-decor-m2.png');
+  background-repeat: no-repeat;
+  background-size: 30%,auto;
+  background-position: top right;
+}
+
+#home-row-m3{
+  background-image: url('./img/small-decor-m.png');
+  background-repeat: no-repeat;
+  background-size: 30%,auto;
+  background-position: top right;
+}
+#home-row-m2-col-2
+{
+  height: 22rem;
+}
+#home-row-m3-col-2
+{
+  height: 22rem;
+}
+
+#conf,#pub{
+  background-size: 30%,auto;
+
+}
+
 }

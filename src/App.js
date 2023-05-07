@@ -9,8 +9,9 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Carousel from 'react-bootstrap/Carousel';
 import { projectInfo } from './JSON/projectInfo.js';
+import { news } from './JSON/news.js';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+
 
 
 function Entrance(){
@@ -91,13 +92,9 @@ export function Header()
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="SCHOLARLY PRODUCTS" className='me-3'>
-              <NavDropdown.Item href="#action3"></NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                ALL
+            <NavDropdown.Item href="/conference">Selected Conference Presentations</NavDropdown.Item>
+              <NavDropdown.Item href="/publications">
+              Selected Refereed Publications
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="/news" className='me-3'>NEWS</Nav.Link>
@@ -141,13 +138,9 @@ export function Header()
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="SCHOLARLY PRODUCTS" className='me-3'>
-              <NavDropdown.Item href="#action3"></NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                ALL
+              <NavDropdown.Item href="/conference">Selected Conference Presentations</NavDropdown.Item>
+              <NavDropdown.Item href="/publications">
+              Selected Refereed Publications
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="/news" className='me-3'>NEWS</Nav.Link>
@@ -192,17 +185,25 @@ export function Footer(){
 }
 
 export function Home(){
+  const currents = [];
+  news.map((n)=>{
+    if(n.year == '2023'){
+      currents.push(n);
+    }
+})
+    
+  
   return (
     <>
     <Header />
-    <div id='home-header-m' className='container-fluid shadow p-0'>
-    <Row xs={1} md={2} className='container-fluid'>
+  <div id='home-page-m'>
+    <Row xs={1} md={2}  id='home-header-m'>
           <Col>
           <Carousel className='shadow-lg'>
         {peopleImg.map((value, index)=>(
           <Carousel.Item>
           <img
-            className="d-block project-img w-100 h-50"
+            className="d-block w-100"
             src={value.img}
             alt={index}
           />
@@ -213,9 +214,85 @@ export function Home(){
         </Carousel.Item>
         ))}
         </Carousel>
-        </Col>
-        </Row>
-    </div>
+      </Col>
+    </Row>
+    <Row xs={1} md={1} id='home-header-m'>
+      <Col>
+          <img src={require('./img/home-header-m.png')} alt='header' className='mt-5'/>
+      </Col>
+    </Row>
+
+    <Row xs={1} md={1} id='about-m'>
+      <Col className='shadow mt-5 p-4 pt-5'>
+        <div className='container'>
+      <h2>About Us</h2>
+      <hr/>
+      <p><b>We are a research lab afiliated to the <a href='https://education.missouri.edu/information-science-learning-technologies/' target='_blank' rel="noreferrer" >School of Information Science and Learning Technologies</a> of the <a href='https://missouri.edu/' target='_blank' rel="noreferrer">University of Missouri – Columbia</a> focusing on</b></p>
+      <br/>
+      <ul>
+        <li><b>Mixed-Reality-Based Learning Environments</b></li>
+        <li><b>Embodied Interactions and Learning</b></li>
+        <li><b>Learning Games for STEM Subjects and Computational Thinking</b></li>
+        <li><b>Novel Technologies for Instructions and Learning</b></li>
+      </ul>
+      </div>
+      </Col>
+    </Row>
+    <Row xs={1} md={1} id='home-row-m2'>
+    <Col className='shadow mt-5 p-4 pt-5'>
+        <h2>Reserch Projects</h2>
+        <hr/>
+        <Carousel slide={false} variant="dark">
+      {projectInfo.map((value,index)=>(
+        <Carousel.Item>
+          <Row xs={1} md={2}>
+            <Col>
+                <img src={value.imgs!=''?value.imgs[0]:require('./img/logo.png')} alt={value.name} className='home-projects'/>
+            </Col>
+            <Col className='mt-4'>
+              <div id='home-row-m2-col-2'>
+              <h4 className='project-title'>{value.name}</h4>
+              <p>{value.subtitle}</p>
+              <Button variant="dark" href={'/projects/'+value.project}>Learn More</Button>
+              </div>
+            </Col>
+          </Row>
+
+        </Carousel.Item>
+
+      ))}
+      </Carousel>
+      </Col>
+      </Row>
+      <Row xs={1} md={1} id='home-row-m3'>
+      <Col className='shadow mt-5 mb-5 p-4 pt-5'>
+        <h2>{new Date().getFullYear()} News</h2>
+        <hr/>
+        <Carousel slide={false} variant="dark">
+          
+      {currents.map((value,index)=>(
+        
+        <Carousel.Item>
+          <Row xs={1} md={2}>
+            <Col>
+                <img src={(value.imgs!='')?value.imgs[0]:require('./img/logo.png')} alt={value.name} className='home-projects'/>
+            </Col>
+            <Col className='mt-5'>
+            <div id='home-row-m3-col-2'>
+              <h4 className='project-title'>{value.name}</h4>
+              <p>{value.txt}</p>
+              <Button variant="dark" href={'/news'}>Learn More</Button>
+              </div>
+            </Col>
+          </Row>
+
+        </Carousel.Item>
+        
+      ))}
+      </Carousel>
+      </Col>
+      </Row>
+      </div>
     <div id='home-header' className='container-fluid shadow p-0'>
       <Row xs={1} md={1} className="home-show">
    
@@ -269,12 +346,15 @@ export function Home(){
     </Col>
     </Row>
     </div>
+    
     <div className='container-fluid' id='home-content'>
+    
     <Row xs={1} md={1}  id='desc-img' className='justify-content-md-center'>
       <Col className='m-5'>
        <h2> <img src={require('./img/logo.png')} alt='name'/>Technology to Enhance Learning Lab</h2>
       </Col>
     </Row>
+    
     <Row xs={1} md={1} id='how-row1'>
       <Col className='m-5 shadow p-5' id='desc'>
       <h2>About Us</h2>
@@ -287,7 +367,7 @@ export function Home(){
       <p><img src={require('./img/logo.png')} alt='logo'/><b>Novel Technologies for Instructions and Learning</b></p>
       </Col>
     </Row>
-    <Row xs={1} md={1} >
+    <Row xs={1} md={1} id='how-row2'>
       <Col className='m-5 shadow p-5' id='about'>
         <h2>Reserch Projects</h2>
         <hr/>
@@ -307,6 +387,33 @@ export function Home(){
 
         </Carousel.Item>
 
+      ))}
+      </Carousel>
+      </Col>
+    </Row>
+
+    <Row xs={1} md={1} id='how-row3'>
+      <Col className='m-5 shadow p-5' id='news'>
+        <h2>{new Date().getFullYear()} News</h2>
+        <hr/>
+        <Carousel slide={false} variant="dark">
+          
+      {currents.map((value,index)=>(
+        
+        <Carousel.Item>
+          <Row xs={1} md={2}>
+            <Col>
+                <img src={(value.imgs!='')?value.imgs[0]:require('./img/logo.png')} alt={value.name} className='home-projects'/>
+            </Col>
+            <Col className='mt-4'>
+              <h4 className='project-title'>{value.name}</h4>
+              <p>{value.txt}</p>
+              <Button variant="dark" href={'/news'}>Learn More</Button>
+            </Col>
+          </Row>
+
+        </Carousel.Item>
+        
       ))}
       </Carousel>
       </Col>

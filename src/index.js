@@ -1,6 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import $ from 'jquery';
-import Popper from 'popper.js';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -11,6 +9,8 @@ import { Members } from './pages/Members.js';
 import { MemberPage }  from './pages/MemberPage.js';
 import { Products } from './pages/Products.js';
 import { ProductPage } from './pages/ProductPage.js';
+import { Conference } from './pages/Conference.js';
+import { Publications } from './pages/Publications.js';
 import { News } from './pages/News.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './custom.scss';
@@ -28,6 +28,8 @@ root.render(
       <Route path='/products' element={<Products />} />
       <Route path='/members/:product' element={<ProductPage />} />
       <Route path='/news' element={<News />} />
+      <Route path='/conference' element={<Conference />} />
+      <Route path='/publications' element={<Publications />} />
     </Routes>
   </BrowserRouter>
 );
