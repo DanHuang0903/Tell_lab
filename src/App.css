@@ -1,4 +1,7 @@
 
+#root{
+  font-family: 'Heiti TC';
+}
 #main-background {
   background-image:url("./img/background.png");
   background-repeat: no-repeat;
