@@ -1,7 +1,7 @@
 {
   "name": "tell-lab",
   "version": "0.1.0",
-  "homepage": "https://DanHuang0903.github.io/Tell_lab",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",
