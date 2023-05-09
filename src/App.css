@@ -105,6 +105,9 @@
 #home-header, #home-content {
   overflow: hidden;
 }
+.home-car-img {
+  height: 35rem;
+}
 
 #nav-img{
   padding: 0;
@@ -120,12 +123,17 @@
 .nav-drop p{
   color: azure;
 }
-.icons {
+.icons,.icons-f {
   width: 2rem;
 }
 .icons:hover{
   animation-name: hithere;
   animation-duration: 1s;
+}
+
+.icons-f {
+  animation: hithere 1s;
+
 }
 
 @keyframes rotate{
@@ -162,7 +170,7 @@
   z-index: -2;
 }
 .project-img{
-  height: 35rem;
+  height: 20rem;
 }
 #desc-img{
   height: 10rem;
@@ -246,6 +254,28 @@
   width: 30rem;
 }
 
+
+
+#video a {
+  text-decoration: none;
+  color: #333;
+  text-align: end;
+}
+
+#video h4 {
+  height: 2rem;
+  font-size: medium;
+}
+#frame {
+  height: 18rem;
+  width: auto;
+  margin-bottom: 3rem;
+}
+#link {
+  height: 6rem;
+  margin-top: 1rem;
+}
+
 #conf,#pub{
   background-image: url('./img/small-decor-m2.png');
   background-repeat: no-repeat;
@@ -253,7 +283,7 @@
   background-position: top right;
 }
 
-#news-header {
+#news-header, #project-header {
   font-family:'Heiti TC';
   background-image: url('./img/member_background.png');
   background-repeat: no-repeat;
@@ -495,5 +525,6 @@
 .project-tab{
   font-size: 0.6rem;
 }
+
 
 }

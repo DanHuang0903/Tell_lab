@@ -299,7 +299,7 @@ export function Home(){
       <Carousel id='car-body'>
       <Carousel.Item>
         <img
-          className="d-block project-img w-100"
+          className="d-block home-car-img w-100"
           src={require('./img/car-1.png')}
           alt="project 1"
         />
@@ -310,7 +310,7 @@ export function Home(){
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block project-img w-100"
+          className="d-block home-car-img w-100"
           src={require('./img/car-2.png')}
           alt="project 2"
         />
@@ -321,7 +321,7 @@ export function Home(){
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block project-img w-100"
+          className="d-block home-car-img  w-100"
           src={require('./img/car-3.png')}
           alt="Third slide"
         />
@@ -332,7 +332,7 @@ export function Home(){
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block project-img w-100"
+          className="d-block home-car-img  w-100"
           src={require('./img/car-4.png')}
           alt="4th slide"
         />
