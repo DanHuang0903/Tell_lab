@@ -457,9 +457,7 @@
   height: 10rem;
 }
 
-.m-txt{
-  padding-top: 0rem;
-}
+
 #m-logo{
   margin-top: 10rem;
 }
@@ -467,23 +465,23 @@
 #p1-m{
   display: block;
   transform: translateY(-30rem) translateX(0rem);
-  animation: fly-in-l-m 3.5s;
+  animation: fly-in-l-m 3.5s ease;
 
 }
 #p2-m {
   display: block;
   transform: translateY(-30rem) translateX(0rem);
-  animation: fly-in-l-m 4.5s;
+  animation: fly-in-l-m 4.5s ease;
 }
 #p3-m{
   display: block;
   transform: translateY(-30rem) translateX(0rem);
-  animation: fly-in-l-m 5.5s;
+  animation: fly-in-l-m 5.5s ease;
 }
 #p4-m {
   display: block;
   transform: translateY(-30rem) translateX(0rem);
-  animation: fly-in-l-m 6.5s;
+  animation: fly-in-l-m 6.5s ease;
 }
 
 

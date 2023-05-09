@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react';
 import { projectInfo } from '../JSON/projectInfo.js';
 import { Header,Footer } from '../App.js';
 import Col from 'react-bootstrap/Col';
@@ -7,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Carousel from 'react-bootstrap/Carousel';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import '../App.css';
+import 'react-tabs/style/react-tabs.css';
 
 export function Projects(){
 
@@ -16,14 +16,13 @@ export function Projects(){
           <Header />
 
           <div className='container'>
-        <Row id='news-header' className='shadow'>
+        <Row id='project-header' className='shadow'>
           <Col className='mt-5'>
           <h1><img src={require('../img/logo.png')} alt='logo' className='me-3 ms-3'/>Projects</h1>
           </Col>
         </Row>
         <Tabs className='mt-5'>
-           
-            <TabList className='project-tab'>
+            <TabList className='project-tab p-0 h-100'>
             {
                 projectInfo.map((p) => (
                     <Tab>{p.tab}</Tab>
@@ -68,7 +67,7 @@ export function Projects(){
                   <h3 className='project-title mt-3'>{value['title']}</h3>
                 </Row>
                 <Row>
-                <div className='project-title project-detail'>{value['detail']}</div>
+                <p className='project-title project-detail'>{value['detail']}</p>
               </Row>
               </div>
               ))}
