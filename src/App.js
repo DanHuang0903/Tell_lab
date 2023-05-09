@@ -22,7 +22,7 @@ function Entrance(){
       <Link type='button' id='enter' className='btn btn-dark' to='/home'> Expore </Link>
     </div>
     <img id='img' src={require('./img/main_background.png')} alt='background' />
-    <div id='m-background'>
+    <div id='m-background' className='h-100 m-0'>
     
     <Row id='img-m1'>
     <Row id='m-logo'>
@@ -90,34 +90,18 @@ export function Header()
 
           <Nav className="ms-3" id='lg-nav'>
             <Nav.Link href="/home" className='me-3'>HOME</Nav.Link>
-            <NavDropdown title="PROJECTS" className='me-3'>
-              <NavDropdown.Item href="/projects/VR02" className='nav-drop'>Virtual Reality Online Orientation (VRO2)</NavDropdown.Item>
-              <NavDropdown.Item href="/projects/VR-Clinic" className='nav-drop'>
-              Virtual Reality Clinic Room
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/projects/iVRLab" className='nav-drop'>
-              Immersive VRLab Training (iVRLab)
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/projects/VR-Graduation" className='nav-drop'>
-              Virtual Reality Graduation Celebration amidst the Pandemic
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/projects/CAVE" className='nav-drop'>
-              CAVE Virtual Reality
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/projects/VR-Media" className='nav-drop'>
-              VR Media Gallery
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link href="/projects" className='me-3'>PROJECTS</Nav.Link>
+            
             <NavDropdown title="MEMBERS" className='me-3'>
-              <NavDropdown.Item href='/members/Xinhao' className='nav-drop'>Dr. Xinhao Xu</NavDropdown.Item>
-              <NavDropdown.Item href='/members/Hao' className='nav-drop'>Hao He</NavDropdown.Item>
-              <NavDropdown.Item href='/members/Jhon' className='nav-drop'>Jhon Bueno Vesga</NavDropdown.Item>
-              <NavDropdown.Item href='/members/Gayathri' className='nav-drop'>Gayathri Sadanala</NavDropdown.Item>
-              <NavDropdown.Item href='/members/Shangman' className='nav-drop'>Shangman Li</NavDropdown.Item>
-              <NavDropdown.Item href='/members/Yuanyuan' className='nav-drop'>Yuanyuan Gu</NavDropdown.Item>
-              <NavDropdown.Item href='/members/ChenYu' className='nav-drop'>ChenYu (Alice) Hung</NavDropdown.Item>
-              <NavDropdown.Item href='/members/Jason' className='nav-drop'>Jason Snyder</NavDropdown.Item>
-              <NavDropdown.Item href='/members/Lanxin' className='nav-drop'>Lanxin Xue</NavDropdown.Item>
+              <NavDropdown.Item href='/Xinhao' className='nav-drop'>Dr. Xinhao Xu</NavDropdown.Item>
+              <NavDropdown.Item href='/Hao' className='nav-drop'>Hao He</NavDropdown.Item>
+              <NavDropdown.Item href='/Jhon' className='nav-drop'>Jhon Bueno Vesga</NavDropdown.Item>
+              <NavDropdown.Item href='/Gayathri' className='nav-drop'>Gayathri Sadanala</NavDropdown.Item>
+              <NavDropdown.Item href='/Shangman' className='nav-drop'>Shangman Li</NavDropdown.Item>
+              <NavDropdown.Item href='/Yuanyuan' className='nav-drop'>Yuanyuan Gu</NavDropdown.Item>
+              <NavDropdown.Item href='/ChenYu' className='nav-drop'>ChenYu (Alice) Hung</NavDropdown.Item>
+              <NavDropdown.Item href='/Jason' className='nav-drop'>Jason Snyder</NavDropdown.Item>
+              <NavDropdown.Item href='/Lanxin' className='nav-drop'>Lanxin Xue</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href='/members' className='nav-drop'>
               ALL
@@ -135,35 +119,18 @@ export function Header()
         </Container>
       </Navbar>
       <Nav className="ms-3" id='m-nav'>
+            <Nav.Link href="/projects" className='me-3'>PROJECTS</Nav.Link>
             
-            <NavDropdown title="PROJECTS" className='me-3'>
-              <NavDropdown.Item href="/projects/VR02" className='nav-drop'>Virtual Reality Online Orientation (VRO2)</NavDropdown.Item>
-              <NavDropdown.Item href="/projects/VR-Clinic" className='nav-drop'>
-              Virtual Reality Clinic Room
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/projects/iVRLab" className='nav-drop'>
-              Immersive VRLab Training (iVRLab)
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/projects/VR-Graduation" className='nav-drop'>
-              Virtual Reality Graduation Celebration amidst the Pandemic
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/projects/CAVE" className='nav-drop'>
-              CAVE Virtual Reality
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/projects/VR-Media" className='nav-drop'>
-              VR Media Gallery
-              </NavDropdown.Item>
-            </NavDropdown>
             <NavDropdown title="MEMBERS" className='me-3'>
-              <NavDropdown.Item href='/members/Xinhao' className='nav-drop'>Dr. Xinhao Xu</NavDropdown.Item>
-              <NavDropdown.Item href='/members/Hao' className='nav-drop'>Hao He</NavDropdown.Item>
-              <NavDropdown.Item href='/members/Jhon' className='nav-drop'>Jhon Bueno Vesga</NavDropdown.Item>
-              <NavDropdown.Item href='/members/Gayathri' className='nav-drop'>Gayathri Sadanala</NavDropdown.Item>
-              <NavDropdown.Item href='/members/Shangman' className='nav-drop'>Shangman Li</NavDropdown.Item>
-              <NavDropdown.Item href='/members/Yuanyuan' className='nav-drop'>Yuanyuan Gu</NavDropdown.Item>
-              <NavDropdown.Item href='/members/ChenYu' className='nav-drop'>ChenYu (Alice) Hung</NavDropdown.Item>
-              <NavDropdown.Item href='/members/Jason' className='nav-drop'>Jason Snyder</NavDropdown.Item>
-              <NavDropdown.Item href='/members/Lanxin' className='nav-drop'>Lanxin Xue</NavDropdown.Item>
+              <NavDropdown.Item href='/Xinhao' className='nav-drop'>Dr. Xinhao Xu</NavDropdown.Item>
+              <NavDropdown.Item href='/Hao' className='nav-drop'>Hao He</NavDropdown.Item>
+              <NavDropdown.Item href='/Jhon' className='nav-drop'>Jhon Bueno Vesga</NavDropdown.Item>
+              <NavDropdown.Item href='/Gayathri' className='nav-drop'>Gayathri Sadanala</NavDropdown.Item>
+              <NavDropdown.Item href='/Shangman' className='nav-drop'>Shangman Li</NavDropdown.Item>
+              <NavDropdown.Item href='/Yuanyuan' className='nav-drop'>Yuanyuan Gu</NavDropdown.Item>
+              <NavDropdown.Item href='/ChenYu' className='nav-drop'>ChenYu (Alice) Hung</NavDropdown.Item>
+              <NavDropdown.Item href='/Jason' className='nav-drop'>Jason Snyder</NavDropdown.Item>
+              <NavDropdown.Item href='/Lanxin' className='nav-drop'>Lanxin Xue</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href='/members' className='nav-drop'>
               ALL
@@ -229,7 +196,7 @@ export function Home(){
     <>
     <Header />
   <div id='home-page-m'>
-    <Row xs={1} md={2}  id='home-header-m'>
+    <Row xs={1} md={2}>
           <Col>
           <Carousel className='shadow-lg'>
         {peopleImg.map((value, index)=>(
@@ -248,7 +215,7 @@ export function Home(){
         </Carousel>
       </Col>
     </Row>
-    <Row xs={1} md={1} id='home-header-m'>
+    <Row xs={1} md={1}>
       <Col>
           <img src={require('./img/home-header-m.png')} alt='header' className='mt-5'/>
       </Col>
@@ -285,7 +252,7 @@ export function Home(){
               <div id='home-row-m2-col-2'>
               <h4 className='project-title'>{value.name}</h4>
               <p>{value.subtitle}</p>
-              <Button variant="dark" href={'/projects/'+value.project}>Learn More</Button>
+              <Button variant="dark" href={'/projects'}>Learn More</Button>
               </div>
             </Col>
           </Row>
@@ -413,7 +380,7 @@ export function Home(){
             <Col className='mt-4'>
               <h4 className='project-title'>{value.name}</h4>
               <p>{value.subtitle}</p>
-              <Button variant="dark" href={'/projects/'+value.project}>Learn More</Button>
+              <Button variant="dark" href={'/projects'}>Learn More</Button>
             </Col>
           </Row>
 
@@ -456,6 +423,9 @@ export function Home(){
     </>
   )
 }
+
+
+
 export function App() {
   return (
     <Entrance />

@@ -26,6 +26,7 @@ import p55 from '../img/project5/p55.jpeg';
 export const projectInfo = [
     {
         'name' : 'Virtual Reality Online Orientation (VRO2)',
+        'tab':'VR02',
         'subtitle' : 'A VR learning environment aiming to offer the online orientation and training.',
         'project' : 'VR02',
         'imgs' : [p11, p12, p13, p14, p15],
@@ -34,6 +35,7 @@ export const projectInfo = [
     },
     {
         'name' : 'Virtual Reality Clinic Room',
+        'tab':'VRClinic',
         'subtitle': 'A 3D virtual interactive environment to help 1st-year nursing students take the patient encounter training.',
         'project' : 'VR-Clinic',
         'imgs' : [p21, p22, p23],
@@ -42,6 +44,7 @@ export const projectInfo = [
     },
     {
         'name': 'Immersive VRLab Training (iVRLab)',
+        'tab':'iVR',
         'subtitle': 'In this study, we apply the latest VR technology and design a state-of-the-art engineering lab training session – the immersive virtual reality lab (iVRLab).',
         'project' : 'iVRLab',
         'imgs' : [p31, p32, p33],
@@ -50,6 +53,7 @@ export const projectInfo = [
     },
     {
         'name' : 'Virtual Reality Graduation Celebration amidst the Pandemic',
+        'tab':'VR Graduation',
         'subtitle':'We created a 3D Virtual Environment for celebrating the College of Education class of 2020 on May, 15.',
         'project' : 'VR-Graduation',
         'imgs' : [p41, p42, p43, p44],
@@ -59,6 +63,7 @@ export const projectInfo = [
     },
     {
         'name' : 'CAVE Virtual Reality',
+        'tab':'CAVE',
         'subtitle' : 'This immersive virtual reality (VR) system with a synchronized motion tracking system will enable foundational and applied research studies across multiple disciplines to gain a better understanding of decision making under complex situations involving human-machine interactions and learning in three-dimensional virtual reality datasets.',
         'project': 'CAVE',
         'imgs' : [p51, p52, p53, p54, p55],
@@ -67,6 +72,7 @@ export const projectInfo = [
     },
     {
         'name' : 'VR Media Gallery: A case study of sense of presence and engagement in an online digital media course',
+        'tab':'VR Media',
         'subtitle':'This study is intended to create an asycronich virtual reality media gallery where students of an online digital media course can present their media creations in an environment created following interactive design guidelines (Kaur, 1997; Parés & Parés, 2001).',
         'project' : 'VR-Media',
         'imgs' : [],

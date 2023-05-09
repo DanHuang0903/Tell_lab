@@ -102,6 +102,9 @@
   height: 35rem;
 
 }
+#home-header, #home-content {
+  overflow: hidden;
+}
 
 #nav-img{
   padding: 0;
@@ -259,6 +262,12 @@
 }
 
 
+#members-container-t{
+  background-image: url('./img/small-decor-m2.png');
+  background-repeat: no-repeat;
+  background-size: 30%,auto;
+  background-position: top right;
+}
 
 @media screen and (min-width:561px){
   #home-header-m{
@@ -341,15 +350,18 @@
   outline: none !important;
   border: none;
 }
+
 #home-header{
   display: none;
 }
 #home-header-m{
-  display: block;
+  overflow: hidden;
 }
 
 #home-header-m img{
   width: 75%;
+  overflow: hidden;
+
   
 }
 
@@ -362,12 +374,16 @@
   background-repeat: no-repeat;
   background-size: 30%,auto;
   background-position: top right;
+  backface-visibility: hidden;
+  overflow: hidden;
 }
 #home-row-m2{
   background-image: url('./img/small-decor-m2.png');
   background-repeat: no-repeat;
   background-size: 30%,auto;
   background-position: top right;
+  backface-visibility: hidden;
+  overflow: hidden;
 }
 
 #home-row-m3{
@@ -375,6 +391,8 @@
   background-repeat: no-repeat;
   background-size: 30%,auto;
   background-position: top right;
+  backface-visibility: hidden;
+  overflow: hidden;
 }
 #home-row-m2-col-2
 {
@@ -393,6 +411,10 @@
   display: none;
 } 
 #m-background{
+  overflow: hidden;
+  position:fixed;
+  padding: 0%;
+  margin: 0%;
   width: 100%;
   height: 100%;
 } 
@@ -403,28 +425,33 @@
   background-size: contain;
   background-position: top right;
   height: 27rem;
-  width: auto;
+  width: 100%;
+  overflow: hidden;
+  position:relative;
+  padding: 0%;
+  margin: 0%;
 
   
 }
 #img-m1 {
   background-image: url('./img/small-decor-m.png');
-  animation: fly-in-t 1s ease;
+  animation: fly-in-t 2.5s ease;
 }
 #img-m2{
   background-image: url('./img/small-decor.png');
-  animation: fly-in-b 1s ease;
+  animation: fly-in-b 2.5s ease;
 
   
 }
 #m-logo img {
-  width: 60%;
+  width: auto;
   height: 60%;
 }
 #enter-m-btn{
   float: absolute;
   right: 0rem;
   bottom: 0rem;
+  overflow: hidden;
 }
 #btn-row{
   height: 10rem;
@@ -437,17 +464,38 @@
   margin-top: 10rem;
 }
 
-#p1-m,#p2-m,#p3-m,#p4-m{
+#p1-m{
+  display: block;
   transform: translateY(-30rem) translateX(0rem);
-  animation-name: fly-in-l-m;
-  animation-duration: 1s;
+  animation: fly-in-l-m 3.5s;
 
+}
+#p2-m {
+  display: block;
+  transform: translateY(-30rem) translateX(0rem);
+  animation: fly-in-l-m 4.5s;
+}
+#p3-m{
+  display: block;
+  transform: translateY(-30rem) translateX(0rem);
+  animation: fly-in-l-m 5.5s;
+}
+#p4-m {
+  display: block;
+  transform: translateY(-30rem) translateX(0rem);
+  animation: fly-in-l-m 6.5s;
 }
 
 
 @keyframes fly-in-l-m {
   0%{ transform: translateY(-30rem) translateX(-50rem);opacity: 0;}
+  50%{ transform: translateY(-30rem) translateX(-50rem);opacity: 0;}
   100%{transform: translateY(-30rem) translateX(0rem); opacity: 1;}
+}
+
+
+.project-tab{
+  font-size: 0.6rem;
 }
 
 }

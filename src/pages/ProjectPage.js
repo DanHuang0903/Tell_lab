@@ -24,7 +24,7 @@ export function ProjectPage(){
           setDescription(current.description);
           
       }
-  },[project]);
+  });
     return (
       <>
         <Header />

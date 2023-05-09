@@ -18,7 +18,7 @@ export function Members(){
                 {memberInfo.map((value,index)=>(
                     <Col key={index}>
                     <Card className='member-card'>
-                        <a key={index} href={'/members/'+value['url']}>
+                        <a key={index} href={'/'+value['url']}>
                         <Card.Img className='member-img' variant='top' src={value['avatar']} alt='avatar'/>
                         </a>
                         <Card.Body className='card-content'>

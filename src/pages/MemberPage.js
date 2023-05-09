@@ -21,7 +21,9 @@ export function MemberPage(){
 
 
     useEffect(() => {
+        console.log(url);
         const member = memberInfo.find(m => m.url == url);
+        console.log(member.url);
         if(member){
             setAvatar(member.avatar);
             setBIO(member.BIO);
@@ -34,9 +36,10 @@ export function MemberPage(){
             setMore(member.more);
             
         }
-    },[url]);
+    });
 
     return (
+        
         <> 
             <Header />
             
