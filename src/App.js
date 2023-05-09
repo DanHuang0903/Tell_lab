@@ -221,8 +221,8 @@ export function Home(){
       </Col>
     </Row>
 
-    <Row xs={1} md={1} id='about-m'>
-      <Col className='shadow mt-5 p-4 pt-5'>
+    <Row xs={1} md={1}>
+      <Col className='shadow mt-5 p-4 pt-5' id='about-m'>
         <div className='container'>
       <h2>About Us</h2>
       <hr/>
@@ -237,8 +237,8 @@ export function Home(){
       </div>
       </Col>
     </Row>
-    <Row xs={1} md={1} id='home-row-m2'>
-    <Col className='shadow mt-5 p-4 pt-5'>
+    <Row xs={1} md={1}>
+    <Col className='shadow mt-5 p-4 pt-5' id='home-row-m2'>
         <h2>Reserch Projects</h2>
         <hr/>
         <Carousel slide={false} variant="dark">
@@ -263,8 +263,8 @@ export function Home(){
       </Carousel>
       </Col>
       </Row>
-      <Row xs={1} md={1} id='home-row-m3'>
-      <Col className='shadow mt-5 mb-5 p-4 pt-5'>
+      <Row xs={1} md={1}>
+      <Col className='shadow mt-5 mb-5 p-4 pt-5'  id='home-row-m3'>
         <h2>{new Date().getFullYear()} News</h2>
         <hr/>
         <Carousel slide={false} variant="dark">
