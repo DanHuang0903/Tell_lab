@@ -1,9 +1,6 @@
-@font-face {font-family: "Heiti TC";
-  src: 
-  url("./Heiti/@font-face/91764cfbfb9049ea89665b0ac8f0ee41.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-}
+
 #root{
-  font-family: 'Heiti TC' !important;
+  font-family: 'Heiti TC';
 }
 .carousel-control-prev, .carousel-control-next { visibility: hidden; }
 
