@@ -74,6 +74,8 @@ export function News(){
               {n.news.map((n) => (
                 <>
                 <h3 className='mt-5'>{n.name}</h3>
+                <p className='news-date'>{'By ' + n.author + ' - ' + n.date}</p>
+         
             
             
                 <Row xs={1} md={n.imgs == [] ? 1 : 2} className='container-fluid mt-5 mb-5'>
@@ -95,6 +97,7 @@ export function News(){
                   <p>{n.txt}</p>
                   <br/>
                   <p><a href={n.link.url} target='_blank' rel="noreferrer">{n.link.name}</a></p>
+                  
                 </Col>
             </Row>
             <hr/>

@@ -11,6 +11,8 @@ import Carousel from 'react-bootstrap/Carousel';
 import { projectInfo } from './JSON/projectInfo.js';
 import { news } from './JSON/news.js';
 import Button from 'react-bootstrap/Button';
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
+import { memberInfo } from './JSON/memberInfo.js';
 
 
 
@@ -93,15 +95,12 @@ export function Header()
             <Nav.Link href="/projects" className='me-3'>PROJECTS</Nav.Link>
             
             <NavDropdown title="MEMBERS" className='me-3'>
-              <NavDropdown.Item href='/Xinhao' className='nav-drop'>Dr. Xinhao Xu</NavDropdown.Item>
-              <NavDropdown.Item href='/Hao' className='nav-drop'>Hao He</NavDropdown.Item>
-              <NavDropdown.Item href='/Jhon' className='nav-drop'>Jhon Bueno Vesga</NavDropdown.Item>
-              <NavDropdown.Item href='/Gayathri' className='nav-drop'>Gayathri Sadanala</NavDropdown.Item>
-              <NavDropdown.Item href='/Shangman' className='nav-drop'>Shangman Li</NavDropdown.Item>
-              <NavDropdown.Item href='/Yuanyuan' className='nav-drop'>Yuanyuan Gu</NavDropdown.Item>
-              <NavDropdown.Item href='/ChenYu' className='nav-drop'>ChenYu (Alice) Hung</NavDropdown.Item>
-              <NavDropdown.Item href='/Jason' className='nav-drop'>Jason Snyder</NavDropdown.Item>
-              <NavDropdown.Item href='/Lanxin' className='nav-drop'>Lanxin Xue</NavDropdown.Item>
+              {
+                memberInfo.map((m,i) => (
+                  <NavDropdown.Item href={'/'+m.url} className='nav-drop'>{m.name}</NavDropdown.Item>
+                ))
+              }
+              
               <NavDropdown.Divider />
               <NavDropdown.Item href='/members' className='nav-drop'>
               ALL
@@ -224,17 +223,31 @@ export function Home(){
     <Row xs={1} md={1}>
       <Col className='shadow mt-5 p-4 pt-5' id='about-m'>
         <div className='container'>
-      <h2>About Us</h2>
-      <hr/>
-      <p><b>We are a research lab afiliated to the <a href='https://education.missouri.edu/information-science-learning-technologies/' target='_blank' rel="noreferrer" >School of Information Science and Learning Technologies</a> of the <a href='https://missouri.edu/' target='_blank' rel="noreferrer">University of Missouri – Columbia</a> focusing on</b></p>
-      <br/>
-      <ul>
-        <li><b>Mixed-Reality-Based Learning Environments</b></li>
-        <li><b>Embodied Interactions and Learning</b></li>
-        <li><b>Learning Games for STEM Subjects and Computational Thinking</b></li>
-        <li><b>Novel Technologies for Instructions and Learning</b></li>
-      </ul>
+          <h2>About Us</h2>
+          <hr/>
+          <p><b>We are a research lab afiliated to the <a href='https://education.missouri.edu/information-science-learning-technologies/' target='_blank' rel="noreferrer" >School of Information Science and Learning Technologies</a> of the <a href='https://missouri.edu/' target='_blank' rel="noreferrer">University of Missouri – Columbia</a> focusing on</b></p>
+          <br/>
+          <ul>
+            <li><b>Mixed-Reality-Based Learning Environments</b></li>
+            <li><b>Embodied Interactions and Learning</b></li>
+            <li><b>Learning Games for STEM Subjects and Computational Thinking</b></li>
+            <li><b>Novel Technologies for Instructions and Learning</b></li>
+          </ul>
       </div>
+      </Col>
+    </Row>
+    <Row xs={1} md={1}>
+      <Col className='shadow mt-5 p-4 pt-5' id='twitter-m'>
+        <div className='container'>
+          <h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className='icons'> <path fill='#00acee' d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> TELL tweets</h2>
+          <hr/>
+          <Row id='twitter-list-m' className='shadow rounded'>
+            <TwitterTimelineEmbed className='twitter-body-m'
+              sourceType="profile" 
+              userId={"1219141583292989441"} 
+            />
+        </Row>
+        </div>
       </Col>
     </Row>
     <Row xs={1} md={1}>
@@ -304,7 +317,7 @@ export function Home(){
           alt="project 1"
         />
         <Carousel.Caption>
-          <p>TELL Team at VR Clinic Project</p>
+          <p className='car-txt'>TELL Team at VR Clinic Project</p>
           
         </Carousel.Caption>
       </Carousel.Item>
@@ -332,7 +345,7 @@ export function Home(){
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block home-car-img  w-100"
+          className="d-block home-car-img w-100"
           src={require('./img/car-4.png')}
           alt="4th slide"
         />
@@ -358,13 +371,31 @@ export function Home(){
       <Col className='m-5 shadow p-5' id='desc'>
       <h2>About Us</h2>
       <hr/>
-      <p><b>We are a research lab afiliated to the <a href='https://education.missouri.edu/information-science-learning-technologies/' target='_blank' rel="noreferrer" >School of Information Science and Learning Technologies</a> of the <a href='https://missouri.edu/' target='_blank' rel="noreferrer">University of Missouri – Columbia</a> focusing on</b></p>
+      <Row xs={1} md={2}>
+        <Col className='hadow pe-5'>
+      
+      <h5><b>We are a research lab afiliated to the <a href='https://education.missouri.edu/information-science-learning-technologies/' target='_blank' rel="noreferrer" >School of Information Science and Learning Technologies</a> of the <a href='https://missouri.edu/' target='_blank' rel="noreferrer">University of Missouri – Columbia</a> focusing on</b></h5>
+      <br/>
       <br/>
       <p><img src={require('./img/logo.png')} alt='logo'/><b>Mixed-Reality-Based Learning Environments</b></p>
       <p><img src={require('./img/logo.png')} alt='logo'/><b>Embodied Interactions and Learning</b></p>
       <p><img src={require('./img/logo.png')} alt='logo'/><b>Learning Games for STEM Subjects and Computational Thinking</b></p>
       <p><img src={require('./img/logo.png')} alt='logo'/><b>Novel Technologies for Instructions and Learning</b></p>
       </Col>
+      <Col>
+        <Row>
+        <h5><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className='icons'> <path fill='#00acee' d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <b>TELL tweets</b></h5>
+        </Row>
+        <Row id='twitter' className='shadow rounded'>
+        <TwitterTimelineEmbed className='twitter-body'
+          sourceType="profile" 
+          userId={"1219141583292989441"} 
+        />
+        </Row>
+      </Col>
+      </Row>
+      </Col>
+
     </Row>
     <Row xs={1} md={1} id='how-row2'>
       <Col className='m-5 shadow p-5' id='about'>

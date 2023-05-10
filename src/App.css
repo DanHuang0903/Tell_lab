@@ -1,6 +1,14 @@
-
+@font-face {font-family: "Heiti TC";
+  src: 
+  url("./Heiti/@font-face/91764cfbfb9049ea89665b0ac8f0ee41.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+}
 #root{
-  font-family: 'Heiti TC';
+  font-family: 'Heiti TC' !important;
+}
+.carousel-control-prev, .carousel-control-next { visibility: hidden; }
+
+#home-page-m{
+  overflow: hidden;
 }
 #main-background {
   background-image:url("./img/background.png");
@@ -105,9 +113,28 @@
 #home-header, #home-content {
   overflow: hidden;
 }
-.home-car-img {
-  height: 35rem;
+.home-car {
+  max-height: 38rem;
 }
+.carousel-caption { 
+  margin-bottom: 3rem;
+  font-size: large;
+  transform: translateX(-30rem);
+ 
+}
+.home-car-img {
+  max-height: 38rem;
+}
+
+#twitter {
+  height: 21rem;
+  width: 65%;
+  overflow: scroll;
+  margin-top: 2rem;
+  
+}
+
+
 
 #nav-img{
   padding: 0;
@@ -135,6 +162,7 @@
   animation: hithere 1s;
 
 }
+
 
 @keyframes rotate{
   0%{transform: rotate(0deg);}
@@ -276,6 +304,11 @@
   margin-top: 1rem;
 }
 
+#link a{
+  text-decoration: none;
+  color: azure;
+}
+
 #conf,#pub{
   background-image: url('./img/small-decor-m2.png');
   background-repeat: no-repeat;
@@ -297,6 +330,11 @@
   background-repeat: no-repeat;
   background-size: 30%,auto;
   background-position: top right;
+}
+
+
+.news-date {
+  font-size: small;
 }
 
 @media screen and (min-width:561px){
@@ -407,8 +445,24 @@
   backface-visibility: hidden;
   overflow: hidden;
 }
-#home-row-m2{
+
+#twitter-m{
   background-image: url('./img/small-decor-m2.png');
+  background-repeat: no-repeat;
+  background-size: 30%,auto;
+  background-position: top right;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+#twitter-list-m {
+  height: 25rem;
+  overflow: scroll;
+  margin-top: 2rem;
+  
+}
+
+#home-row-m2{
+  background-image: url('./img/small-decor-m.png');
   background-repeat: no-repeat;
   background-size: 30%,auto;
   background-position: top right;
@@ -417,7 +471,7 @@
 }
 
 #home-row-m3{
-  background-image: url('./img/small-decor-m.png');
+  background-image: url('./img/small-decor-m2.png');
   background-repeat: no-repeat;
   background-size: 30%,auto;
   background-position: top right;
