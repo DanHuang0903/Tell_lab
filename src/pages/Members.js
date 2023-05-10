@@ -92,7 +92,7 @@ export function Members(){
                     ))}
                 </Row>
                 <Row className='mt-5 container-fluid'>
-                    <h4>Alumnis</h4>
+                    <h4>Alumni</h4>
                     <hr/>
                 </Row>
                 <Row xs={2} md={4} className="g-5">

@@ -95,16 +95,18 @@ export function Header()
             <Nav.Link href="/projects" className='me-3'>PROJECTS</Nav.Link>
             
             <NavDropdown title="MEMBERS" className='me-3'>
+            <NavDropdown.Item href='/members' className='nav-drop'>
+              ALL
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
               {
                 memberInfo.map((m,i) => (
                   <NavDropdown.Item href={'/'+m.url} className='nav-drop'>{m.name}</NavDropdown.Item>
                 ))
               }
               
-              <NavDropdown.Divider />
-              <NavDropdown.Item href='/members' className='nav-drop'>
-              ALL
-              </NavDropdown.Item>
+             
+              
             </NavDropdown>
             <NavDropdown title="SCHOLARLY PRODUCTS" className='me-3'>
             <NavDropdown.Item href="/conference">Selected Conference Presentations</NavDropdown.Item>
@@ -121,19 +123,16 @@ export function Header()
             <Nav.Link href="/projects" className='me-3'>PROJECTS</Nav.Link>
             
             <NavDropdown title="MEMBERS" className='me-3'>
-              <NavDropdown.Item href='/Xinhao' className='nav-drop'>Dr. Xinhao Xu</NavDropdown.Item>
-              <NavDropdown.Item href='/Hao' className='nav-drop'>Hao He</NavDropdown.Item>
-              <NavDropdown.Item href='/Jhon' className='nav-drop'>Jhon Bueno Vesga</NavDropdown.Item>
-              <NavDropdown.Item href='/Gayathri' className='nav-drop'>Gayathri Sadanala</NavDropdown.Item>
-              <NavDropdown.Item href='/Shangman' className='nav-drop'>Shangman Li</NavDropdown.Item>
-              <NavDropdown.Item href='/Yuanyuan' className='nav-drop'>Yuanyuan Gu</NavDropdown.Item>
-              <NavDropdown.Item href='/ChenYu' className='nav-drop'>ChenYu (Alice) Hung</NavDropdown.Item>
-              <NavDropdown.Item href='/Jason' className='nav-drop'>Jason Snyder</NavDropdown.Item>
-              <NavDropdown.Item href='/Lanxin' className='nav-drop'>Lanxin Xue</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href='/members' className='nav-drop'>
+            <NavDropdown.Item href='/members' className='nav-drop'>
               ALL
-              </NavDropdown.Item>
+            </NavDropdown.Item>
+            <NavDropdown.Divider />
+            {
+                memberInfo.map((m,i) => (
+                  <NavDropdown.Item href={'/'+m.url} className='nav-drop'>{m.name}</NavDropdown.Item>
+                ))
+              }
+              
             </NavDropdown>
             <NavDropdown title="SCHOLARLY PRODUCTS" className='me-3'>
               <NavDropdown.Item href="/conference">Selected Conference Presentations</NavDropdown.Item>
