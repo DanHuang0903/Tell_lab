@@ -83,7 +83,7 @@ export function MemberPage(){
       
             <Row className="container ms-3">
 
-                    <h1>BIO</h1>
+                    <h1>{BIO == ''? '' :'BIO'}</h1>
                     <p>{BIO}</p>
   
             </Row>

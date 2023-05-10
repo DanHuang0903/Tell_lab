@@ -147,7 +147,7 @@ export const memberInfo = [{
                         'avatar': Minh,
                         'BIO': '',
                         'position': 'Research Assistant',
-                        'title': 'Data Sciencist, University of Florida',
+                        'title': 'Data Scientist',
                         'email': 'mtpr3d@mail.missouri.edu',
                         'link_name':'',
                         'link': '',
