@@ -26,9 +26,9 @@ import p55 from '../img/project5/p55.jpeg';
 export const projectInfo = [
     {
         'name' : 'Virtual Reality Online Orientation (VRO2)',
-        'tab':'VR02',
+        'tab':'VRO2',
         'subtitle' : 'A VR learning environment aiming to offer the online orientation and training.',
-        'project' : 'VR02',
+        'project' : 'VRO2',
         'imgs' : [p11, p12, p13, p14, p15],
         'description' : [{title:'About This Project', detail:'Virtual Reality Online Orientation (VRO2), a recent VR learning environment developed by the Mizzou TELL research group, aiming to offer the online orientation for newly-admitted students to get acquainted with the school and the program, and study how VR may facilitate learning and training. \n\nIn this VRO2, students will utilize a viewer to take part in five guided activities. All the activities take place in two virtual buildings that resemble the real building where the School of Information Science and Learning Technologies (SISLT) located: Townsend Hall and London Hall.\n\nOverall, students will be able to explore the virtual SISLT buildings, interact with current SISLT faculty and students, and familiar with the documents regarding available resources to new students.'}],
         'link' :''

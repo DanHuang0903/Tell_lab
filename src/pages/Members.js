@@ -110,13 +110,7 @@ export function Members(){
                                  <Card.Text className='card-name'>
                                 {value['name']}
                                 </Card.Text>
-                                <hr/>
-                                <Card.Text className='card-title'>
-                                {value['position']}
-                                </Card.Text>
-                                <Card.Text className='card-title subtitle'>
-                                {value['title']}
-                                </Card.Text>
+                                
                             </Card.Body>
                         </Card>     
                         </Col>
