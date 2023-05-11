@@ -29,11 +29,14 @@ export function Members(){
         return (
             <>
                 <Header />
-                <div id='member-main' className='container-fluid shadow pb-4'>
-                <img className='bg-img' src={require('../img/small-decor-m2.png')} alt='decor'/>
-                <div id='members-header'><h2  className='pt-4 pb-4'><img src={require('../img/logo.png')} alt='logo' width={70}/> TEAM MEMBERS</h2></div>
+                <div id='members-div' className='container-fluid'>
+                <Row id='all-members-header' className='shadow'>
+                    <Col className='mt-5'>
+                    <h1><img src={require('../img/logo.png')} alt='logo' className=''/> Team Members</h1>
+                    </Col>
+                </Row>
+               <div id='member-main' className='container-fluid shadow pb-4'>
                 <div id='members-container' className='container-fluid'>
-                
                 <Row className='mt-2 container-fluid'>
                     <h4>Director</h4>
                     <hr/>
@@ -119,7 +122,7 @@ export function Members(){
                         </Col>
                     ))}
                 </Row>
-                  
+                  </div>
                 </div>
                 </div>
             <Footer />

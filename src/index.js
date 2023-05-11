@@ -10,6 +10,8 @@ import { Conference } from './pages/Conference.js';
 import { Publications } from './pages/Publications.js';
 import { News } from './pages/News.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { projectInfo } from './JSON/projectInfo.js';
+import { ProjectPage } from './pages/ProjectPage.js';
 import './custom.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -24,6 +26,10 @@ root.render(
       <Route path='/publications' element={<Publications />} />
       <Route path='/:url' element={<MemberPage />} />
       <Route path='/projects' element={<Projects />} />
+      {projectInfo.map((p,i)=>(
+                  <Route path={'/'+p.project} element={<ProjectPage name={p.project}/>}></Route>
+                ))
+      }
     </Routes>
   </BrowserRouter>
 );

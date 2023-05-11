@@ -55,7 +55,7 @@ export function News(){
     return (
       <>
         <Header />
-        <div className='container'>
+        <div className='container-fluid'>
         <Row id='news-header' className='shadow'>
           <Col className='mt-5'>
           <h1><img src={require('../img/logo.png')} alt='logo' className='me-3 ms-3'/>NEWS</h1>
@@ -70,7 +70,7 @@ export function News(){
           </TabList>
 
            {newsAll.map((n)=>(
-            <TabPanel className='mt-5'>
+            <TabPanel className='news-content'>
               {n.news.map((n) => (
                 <>
                 <h3 className='mt-5'>{n.name}</h3>

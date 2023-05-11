@@ -27,11 +27,9 @@ function Entrance(){
     <div id='m-background' className='h-100 m-0'>
     
     <Row id='img-m1'>
-    <Row id='m-logo'>
-        <img src={require('./img/home-header-m.png')} alt='logo'/>
-      </Row>
-      
-        
+      <Row id='m-logo-1'></Row>
+      <img id='m-logo-2' src={require('./img/navlogo.png')} alt='logo'/>
+   
     </Row>
     <Row  id='img-m2'>
       <Row id='btn-row'></Row>
@@ -47,9 +45,12 @@ function Entrance(){
     <Row className='container m-txt ms-2' id='enter-m-txt'>
         <p id='p1-m'>Mixed-Reality-Based Learning Environments</p>
         <br/>
+        <br/>
         <p id='p2-m'>Embodied Interactions and Learning</p>
         <br/>
+        <br/>
         <p id='p3-m'>Learning Games for STEM Subjects and Computational Thinking</p>
+        <br/>
         <br/>
         <p id='p4-m'>Novel Technologies for Instructions and Learning</p>
         </Row>
@@ -77,13 +78,14 @@ export function Header()
 
   return (
     <>
-      <Navbar expand="lg" bg="light" variant="light" className='shadow'>
-        <Container id='main-nav'>
+      <Navbar expand="lg" bg="dark" variant="dark" className='shadow'>
+        <Container className='ms-3'>
+        
           <Navbar.Brand href='/home'>
-          <img id='nav-img' src={require('./img/navlogo.png')} alt='logo' width={60}/>
+          <img id='nav-img' src={require('./img/logo-reverse.png')} alt='logo' width={60}/>
           </Navbar.Brand>
 
-            <button id='sm-nav' className='navbar-btn hoverale' onClick={handleClick}>
+          <button id='sm-nav' className='navbar-btn hoverale' onClick={handleClick}>
             <span></span>
             <span></span>
             <span></span>
@@ -92,8 +94,19 @@ export function Header()
 
           <Nav className="ms-3" id='lg-nav'>
             <Nav.Link href="/home" className='me-3'>HOME</Nav.Link>
-            <Nav.Link href="/projects" className='me-3'>PROJECTS</Nav.Link>
             
+            <NavDropdown title="PROJECTS" className='me-3'>
+            <NavDropdown.Item href='/projects' className='nav-drop'>
+                ALL
+               </NavDropdown.Item>
+               <NavDropdown.Divider />
+              {
+                projectInfo.map((p,i)=>(
+                  <NavDropdown.Item href={'/'+p.project} className='nav-drop'>{p.project}</NavDropdown.Item>
+                ))
+              }
+       
+            </NavDropdown>
             <NavDropdown title="MEMBERS" className='me-3'>
             <NavDropdown.Item href='/members' className='nav-drop'>
               ALL
@@ -103,25 +116,37 @@ export function Header()
                 memberInfo.map((m,i) => (
                   <NavDropdown.Item href={'/'+m.url} className='nav-drop'>{m.name}</NavDropdown.Item>
                 ))
-              }
-              
-             
-              
+              }  
             </NavDropdown>
             <NavDropdown title="SCHOLARLY PRODUCTS" className='me-3'>
-            <NavDropdown.Item href="/conference">Selected Conference Presentations</NavDropdown.Item>
-              <NavDropdown.Item href="/publications">
+            <NavDropdown.Item href="/conference" className='nav-drop'>Selected Conference Presentations</NavDropdown.Item>
+              <NavDropdown.Item href="/publications" className='nav-drop'>
               Selected Refereed Publications
               </NavDropdown.Item>
             </NavDropdown>
+           
             <Nav.Link href="/news" className='me-3'>NEWS</Nav.Link>
-            <Nav.Link href="https://docs.google.com/forms/d/e/1FAIpQLScyRncCDfMSkvhmIeIly8HD5zYNB0v04CTQXVZBQ7iraVHLGg/viewform" target='_blank' className='me-3'>REGISTER</Nav.Link>
+            <Nav.Link href="https://docs.google.com/forms/d/e/1FAIpQLScyRncCDfMSkvhmIeIly8HD5zYNB0v04CTQXVZBQ7iraVHLGg/viewform" target='_blank' className='me-0'>REGISTER</Nav.Link>
           </Nav>
-        </Container>
+          </Container>
       </Navbar>
+
+    
+      
       <Nav className="ms-3" id='m-nav'>
-            <Nav.Link href="/projects" className='me-3'>PROJECTS</Nav.Link>
-            
+      
+            <NavDropdown title="PROJECTS" className='me-3'>
+               <NavDropdown.Item href='/projects' className='nav-drop'>
+                ALL
+               </NavDropdown.Item>
+               <NavDropdown.Divider />
+              {
+                projectInfo.map((p,i)=>(
+                  <NavDropdown.Item href={'/'+p.project} className='nav-drop'>{p.project}</NavDropdown.Item>
+                ))
+              }
+       
+            </NavDropdown>
             <NavDropdown title="MEMBERS" className='me-3'>
             <NavDropdown.Item href='/members' className='nav-drop'>
               ALL
@@ -135,8 +160,8 @@ export function Header()
               
             </NavDropdown>
             <NavDropdown title="SCHOLARLY PRODUCTS" className='me-3'>
-              <NavDropdown.Item href="/conference">Selected Conference Presentations</NavDropdown.Item>
-              <NavDropdown.Item href="/publications">
+              <NavDropdown.Item href="/conference" className='nav-drop'>Selected Conference Presentations</NavDropdown.Item>
+              <NavDropdown.Item href="/publications" className='nav-drop'>
               Selected Refereed Publications
               </NavDropdown.Item>
             </NavDropdown>
@@ -224,13 +249,16 @@ export function Home(){
         <div className='container'>
           <h2>About Us</h2>
           <hr/>
-          <p><b>We are a research lab afiliated to the <a href='https://education.missouri.edu/information-science-learning-technologies/' target='_blank' rel="noreferrer" >School of Information Science and Learning Technologies</a> of the <a href='https://missouri.edu/' target='_blank' rel="noreferrer">University of Missouri – Columbia</a> focusing on</b></p>
+          <br/>
+          <h6><b>TELL</b> - Technology to Enhance Learning Lab</h6>
+          <br/>
+          <p>We are a research lab afiliated to the <a href='https://education.missouri.edu/information-science-learning-technologies/' target='_blank' rel="noreferrer" >School of Information Science and Learning Technologies</a> of the <a href='https://missouri.edu/' target='_blank' rel="noreferrer">University of Missouri – Columbia</a> focusing on</p>
           <br/>
           <ul>
-            <li><b>Mixed-Reality-Based Learning Environments</b></li>
-            <li><b>Embodied Interactions and Learning</b></li>
-            <li><b>Learning Games for STEM Subjects and Computational Thinking</b></li>
-            <li><b>Novel Technologies for Instructions and Learning</b></li>
+            <li>Mixed-Reality-Based Learning Environments</li>
+            <li>Embodied Interactions and Learning</li>
+            <li>Learning Games for STEM Subjects and Computational Thinking</li>
+            <li>Novel Technologies for Instructions and Learning</li>
           </ul>
       </div>
       </Col>
@@ -264,7 +292,7 @@ export function Home(){
               <div id='home-row-m2-col-2'>
               <h4 className='project-title'>{value.name}</h4>
               <p>{value.subtitle}</p>
-              <Button variant="dark" href={'/projects'}>Learn More</Button>
+              <Button variant="dark" href={'/'+value.project}>Learn More</Button>
               </div>
             </Col>
           </Row>
@@ -292,7 +320,7 @@ export function Home(){
             <div id='home-row-m3-col-2'>
               <h4 className='project-title'>{value.name}</h4>
               <p>{value.txt}</p>
-              <Button variant="dark" href={'/news'}>Learn More</Button>
+              <Button variant="dark" href={'/news'}>All TELL News</Button>
               </div>
             </Col>
           </Row>
@@ -372,14 +400,14 @@ export function Home(){
       <hr/>
       <Row xs={1} md={2}>
         <Col className='hadow pe-5'>
-      
-      <h5><b>We are a research lab afiliated to the <a href='https://education.missouri.edu/information-science-learning-technologies/' target='_blank' rel="noreferrer" >School of Information Science and Learning Technologies</a> of the <a href='https://missouri.edu/' target='_blank' rel="noreferrer">University of Missouri – Columbia</a> focusing on</b></h5>
+      <h5><b>TELL - Technology to Enhance Learning Lab</b></h5>
       <br/>
+      <p>We are a research lab afiliated to the <a href='https://education.missouri.edu/information-science-learning-technologies/' target='_blank' rel="noreferrer" >School of Information Science and Learning Technologies</a> of the <a href='https://missouri.edu/' target='_blank' rel="noreferrer">University of Missouri – Columbia</a> focusing on</p>
       <br/>
-      <p><img src={require('./img/logo.png')} alt='logo'/><b>Mixed-Reality-Based Learning Environments</b></p>
-      <p><img src={require('./img/logo.png')} alt='logo'/><b>Embodied Interactions and Learning</b></p>
-      <p><img src={require('./img/logo.png')} alt='logo'/><b>Learning Games for STEM Subjects and Computational Thinking</b></p>
-      <p><img src={require('./img/logo.png')} alt='logo'/><b>Novel Technologies for Instructions and Learning</b></p>
+      <p><img src={require('./img/logo.png')} alt='logo'/>Mixed-Reality-Based Learning Environments</p>
+      <p><img src={require('./img/logo.png')} alt='logo'/>Embodied Interactions and Learning</p>
+      <p><img src={require('./img/logo.png')} alt='logo'/>Learning Games for STEM Subjects and Computational Thinking</p>
+      <p><img src={require('./img/logo.png')} alt='logo'/>Novel Technologies for Instructions and Learning</p>
       </Col>
       <Col>
         <Row>
@@ -437,7 +465,7 @@ export function Home(){
             <Col className='mt-4'>
               <h4 className='project-title'>{value.name}</h4>
               <p>{value.txt}</p>
-              <Button variant="dark" href={'/news'}>Learn More</Button>
+              <Button variant="dark" href={'/news'}>All TELL News</Button>
             </Col>
           </Row>
 

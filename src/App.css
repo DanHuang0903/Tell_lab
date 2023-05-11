@@ -1,6 +1,6 @@
 
 #root{
-  font-family: 'Heiti TC';
+  font-family: 'Arial';
 }
 .carousel-control-prev, .carousel-control-next { visibility: hidden; }
 
@@ -32,7 +32,7 @@
 
 
 #logo {
-  font-family: 'Heiti TC';
+  
   width: 70%;
   height: 30%;
   margin-left: 10%;
@@ -111,16 +111,15 @@
   overflow: hidden;
 }
 .home-car {
-  max-height: 38rem;
+  height: 42rem;
 }
 .carousel-caption { 
-  margin-bottom: 3rem;
-  font-size: large;
+  font-size: 1.3rem;
   transform: translateX(-30rem);
  
 }
 .home-car-img {
-  max-height: 38rem;
+  max-height: 42rem;
 }
 
 #twitter {
@@ -138,8 +137,9 @@
   margin: 0;
 }
 
-#main-nav{
+#lg-nav{
   font-size: small;
+  align-items: end;
 }
 .nav-drop{
   font-size: small;
@@ -187,7 +187,7 @@
 }
 
 .home-show{
-  height: 35rem;
+  height: 42rem;
   overflow: visible;
 }
 
@@ -197,10 +197,12 @@
 .project-img{
   height: 20rem;
 }
+
+
 #desc-img{
   height: 10rem;
   text-align: center;
-  font-family:'Heiti TC';
+  
 }
 
 #desc-img img{
@@ -213,7 +215,6 @@
   background-repeat: no-repeat;
   background-size: auto,40%;
   background-position: bottom right;
-  font-family:'Heiti TC';
   animation: back 1s ease;
   transform: translateX(5rem);
 
@@ -254,7 +255,7 @@
 
 
 #about{
-  font-family:'Heiti TC';
+ 
   background-image: url('./img/black-decor-sm.png');
   background-repeat: no-repeat;
   background-size: auto,40%;
@@ -268,9 +269,7 @@
 
 }
 
-.project-title {
-  font-family:'Heiti TC';
-}
+
 .project-detail{
   white-space: pre-line;
 }
@@ -313,12 +312,14 @@
   background-position: top right;
 }
 
-#news-header, #project-header {
-  font-family:'Heiti TC';
+#news-header, #project-header,#all-members-header {
+  
   background-image: url('./img/member_background.png');
   background-repeat: no-repeat;
   background-size: 30%,auto;
   background-position: right;
+  overflow: hidden;
+  
 }
 
 
@@ -334,7 +335,7 @@
   font-size: small;
 }
 
-@media screen and (min-width:561px){
+@media screen and (min-width:581px){
   #home-header-m{
     display: none;
   }
@@ -355,9 +356,25 @@
   #m-background{
     display: none;
   } 
+
+  .project-header{
+    margin: 3rem;
+  }
+  .project-project{
+    margin: 3rem;
+    
+  }
+
+  #members-container {
+    margin: 3rem;
+  }
+
+  .news-content{
+    margin: 3rem;
+  }
 }
 
-@media screen and (max-width:560px){
+@media screen and (max-width:580px){
   
   #lg-nav{
     display: none;
@@ -374,11 +391,11 @@
     color:#333;
   }
   #sm-nav {
-    width: 40px;
-    height: 40px;
-    background: #f5f5f5;
+    width: 55px;
+    height: 55px;
+    background: #212529;
     cursor: pointer;
-    margin-right: 2rem;
+    margin-right: 1rem;
 }
 
 
@@ -387,7 +404,7 @@
     height: 2px;
     margin: 0 auto;
     display: block;
-    background: #555;
+    background: #aaa ;
     transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
 }
 #sm-nav span:first-of-type,
@@ -528,6 +545,7 @@
   width: auto;
   height: 60%;
 }
+
 #enter-m-btn{
   float: absolute;
   right: 0rem;
@@ -535,7 +553,7 @@
   overflow: hidden;
 }
 #btn-row{
-  height: 10rem;
+  height: 6rem;
 }
 
 
@@ -573,9 +591,52 @@
 }
 
 
-.project-tab{
-  font-size: 0.6rem;
+
+.project-project{
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.project-project button{
+  margin-top: 2rem;
+}
+
+.project-img{
+  height: 15rem;
+}
+#projects-div{
+  overflow: hidden;
+}
+
+#members-container {
+  margin-top: 3rem;
+}
+
+.news-content{
+  margin: 1rem;
+}
+.project-header{
+  margin: 1rem;
+}
+.project-project{
+  margin: 1rem;
+}
+#m-lab-name
+{
+  margin: 0;
+  height: 50%;
+  width: 50%;
+}
+#m-logo-1{
+ height: 4rem;
+  
+}
+#m-logo-2{
+  width: 40%;
+  height: 40%;
+
+  
 }
 
 
 }
+
