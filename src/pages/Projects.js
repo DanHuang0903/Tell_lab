@@ -15,7 +15,7 @@ export function Projects(){
         <>
           <Header />
 
-          <div className='container-fluid mb-5' id='projects-div'>
+          <div className='container-fluid' id='projects-div'>
           <Row id='project-header' className='shadow'>
             <Col className='mt-5'>
             <h1><img src={require('../img/logo.png')} alt='logo' className=''/> Projects</h1>
@@ -24,10 +24,10 @@ export function Projects(){
           {
                 projectInfo.map((p) => (
              
-                <div className='shadow pb-3 mt-5'>
+                <div className='shadow pb-3 projects-main'>
                   <Row xs={1} md={1} className='project-header container'>
-                    <Col>
-                      <h3 className='project-title project-project'>
+                    <Col className='ms-3'>
+                      <h3 className='mt-3'>
                         {p.name}
                         
                       </h3>
@@ -56,7 +56,7 @@ export function Projects(){
                       {p.subtitle}
                   </Row>
                   
-                  <Button variant="dark" href={'/'+p.project} className='ms-1 mt-3'>Learn More</Button>
+                  <Button variant="dark" href={'/'+p.project} className='ms-1 mt-3'>TELL Me More</Button>
                   
                   
                 </Col>

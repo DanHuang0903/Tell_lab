@@ -42,7 +42,7 @@ export const news = [
     },{
         'name':'Congratulations! Our former lab member Jhon Bueno Vesga is an Associate Professor at Penn State University now!',
         'txt' : 'Congratulations! Our former lab member Jhon Bueno Vesga got a position as Associate Teaching Professor at Penn State University!',
-        'imgs':[homeheaderm],
+        'imgs':[],
         'link':{name:'College of Information Science and Technologies',url:'https://ist.psu.edu/directory/jmb9813'},
         'date':'October 15, 2022',
         'author' : 'Yuanyuan Gu',
@@ -59,7 +59,7 @@ export const news = [
     },{
         'name' : 'Dr. Xu and TELL members will present at AECT 2022 in Las Vegas',
         'txt' : 'Dr. Xu and TELL members will present at AECT International Convention 2022 in Las Vegas on the topic: The Development of an Immersive Virtual Reality (iVR) Lab Training for a College Engineering Lab Course: An Iterative Design Approach.',
-        'imgs':[homeheaderm],
+        'imgs':[],
         'link' : '',
         'date':'October 7, 2022',
         'author' : 'Yuanyuan Gu',
@@ -83,7 +83,7 @@ export const news = [
     },{
         'name' :'Dr. Xu is Chair of the AERA Design & Technology SIG',
         'txt':'Dr. Xu is chairing the Design and Technology Special Interest Group (SIG) of the American Educational Research Association for the term 2021-2022.',
-        'imgs':[homeheaderm],
+        'imgs':[],
         'link' : {name:'Know more from here.', url:'https://www.aera.net/SIG031/Message-from-SIG-Chair'},
         'date':'August 2, 2021',
         'author' : 'Yuanyuan Gu',

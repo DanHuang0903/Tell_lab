@@ -74,7 +74,7 @@ export const projectInfo = [
         'name' : 'VR Media Gallery: A case study of sense of presence and engagement in an online digital media course',
         'tab':'VR Media',
         'subtitle':'This study is intended to create an asycronich virtual reality media gallery where students of an online digital media course can present their media creations in an environment created following interactive design guidelines (Kaur, 1997; Parés & Parés, 2001).',
-        'project' : 'VR-Media',
+        'project' : 'VR-Media Gallery',
         'imgs' : [],
         'description' : [
             {

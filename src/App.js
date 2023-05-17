@@ -21,7 +21,7 @@ function Entrance(){
     <>
     <div id='main-background'>
       <div id='logo'><h2><img src={require('./img/logo.png')} alt='logo'/>Technology to Enhance Learning Lab</h2></div>
-      <Link type='button' id='enter' className='btn btn-dark' to='/home'> Expore </Link>
+      <Link type='button' id='enter' className='btn btn-dark' to='/home'> TELL Me More </Link>
     </div>
     <img id='img' src={require('./img/main_background.png')} alt='background' />
     <div id='m-background' className='h-100 m-0'>
@@ -36,7 +36,7 @@ function Entrance(){
       <Row>
         <Col className='container m-5'>
         
-            <Link type='button' className='btn btn-dark btn-sm shadow' id='enter-m-btn' to='/home'> Expore </Link>
+            <Link type='button' className='btn btn-dark btn-sm shadow' id='enter-m-btn' to='/home'> TELL Me More </Link>
         
         </Col>
        
@@ -79,7 +79,7 @@ export function Header()
   return (
     <>
       <Navbar expand="lg" bg="dark" variant="dark" className='shadow'>
-        <Container className='ms-3'>
+        <div className='ms-3 container-fluid'>
         
           <Navbar.Brand href='/home'>
           <img id='nav-img' src={require('./img/logo-reverse.png')} alt='logo' width={60}/>
@@ -92,7 +92,7 @@ export function Header()
 
           </button>
 
-          <Nav className="ms-3" id='lg-nav'>
+          <Nav id='lg-nav'>
             <Nav.Link href="/home" className='me-3'>HOME</Nav.Link>
             
             <NavDropdown title="PROJECTS" className='me-3'>
@@ -128,12 +128,12 @@ export function Header()
             <Nav.Link href="/news" className='me-3'>NEWS</Nav.Link>
             <Nav.Link href="https://docs.google.com/forms/d/e/1FAIpQLScyRncCDfMSkvhmIeIly8HD5zYNB0v04CTQXVZBQ7iraVHLGg/viewform" target='_blank' className='me-0'>REGISTER</Nav.Link>
           </Nav>
-          </Container>
+          </div>
       </Navbar>
 
     
       
-      <Nav className="ms-3" id='m-nav'>
+      <Nav className="pt-3 border-bottom" id='m-nav'>
       
             <NavDropdown title="PROJECTS" className='me-3'>
                <NavDropdown.Item href='/projects' className='nav-drop'>
@@ -167,6 +167,7 @@ export function Header()
             </NavDropdown>
             <Nav.Link href="/news" className='me-3'>NEWS</Nav.Link>
             <Nav.Link href="https://docs.google.com/forms/d/e/1FAIpQLScyRncCDfMSkvhmIeIly8HD5zYNB0v04CTQXVZBQ7iraVHLGg/viewform" target='_blank' className='me-3'>REGISTER</Nav.Link>
+            
           </Nav>
     </>
   )
@@ -219,13 +220,13 @@ export function Home(){
     <>
     <Header />
   <div id='home-page-m'>
-    <Row xs={1} md={2}>
+    <Row xs={1} md={1} id='home-car-m'>
           <Col>
           <Carousel className='shadow-lg'>
         {peopleImg.map((value, index)=>(
           <Carousel.Item>
           <img
-            className="d-block w-100"
+            className="d-block w-100 car-m"
             src={value.img}
             alt={index}
           />
@@ -286,13 +287,13 @@ export function Home(){
         <Carousel.Item>
           <Row xs={1} md={2}>
             <Col>
-                <img src={value.imgs!=''?value.imgs[0]:require('./img/logo.png')} alt={value.name} className='home-projects'/>
+                <img src={value.imgs!=''?value.imgs[0]:require('./img/project-default.png')} alt={value.name} className='w-100 home-projects'/>
             </Col>
             <Col className='mt-4'>
               <div id='home-row-m2-col-2'>
               <h4 className='project-title'>{value.name}</h4>
               <p>{value.subtitle}</p>
-              <Button variant="dark" href={'/'+value.project}>Learn More</Button>
+              <Button variant="dark" href={'/'+value.project}>TELL Me More</Button>
               </div>
             </Col>
           </Row>
@@ -314,7 +315,7 @@ export function Home(){
         <Carousel.Item>
           <Row xs={1} md={2}>
             <Col>
-                <img src={(value.imgs!='')?value.imgs[0]:require('./img/logo.png')} alt={value.name} className='home-projects'/>
+                <img src={(value.imgs!='')?value.imgs[0]:require('./img/logo.png')} alt={value.name} className='w-100 home-projects'/>
             </Col>
             <Col className='mt-5'>
             <div id='home-row-m3-col-2'>
@@ -339,7 +340,7 @@ export function Home(){
       <Carousel id='car-body'>
       <Carousel.Item>
         <img
-          className="d-block home-car-img w-100"
+          className="d-block home-car-img w-100 h-100"
           src={require('./img/car-1.png')}
           alt="project 1"
         />
@@ -433,12 +434,12 @@ export function Home(){
         <Carousel.Item>
           <Row xs={1} md={2}>
             <Col>
-                <img src={value.imgs!=''?value.imgs[0]:require('./img/logo.png')} alt={value.name} className='home-projects'/>
+                <img src={value.imgs!=''?value.imgs[0]:require('./img/project-default.png')} alt={value.name} className='home-projects'/>
             </Col>
             <Col className='mt-4'>
               <h4 className='project-title'>{value.name}</h4>
               <p>{value.subtitle}</p>
-              <Button variant="dark" href={'/projects'}>Learn More</Button>
+              <Button variant="dark" href={'/'+value.project}>TELL Me More</Button>
             </Col>
           </Row>
 

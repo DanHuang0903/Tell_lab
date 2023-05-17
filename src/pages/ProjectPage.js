@@ -27,9 +27,9 @@ export function ProjectPage(props){
     return (
       <>
         <Header />
-        <div className='container-fluid mt-5'>
+        <div className='project-single'>
         <Row xs={1} md={1} className='container project-title'>
-            <Col className='project-project'>
+            <Col className='project-project mt-5'>
               <h1>
                 {name}
               </h1>
@@ -37,7 +37,8 @@ export function ProjectPage(props){
             </Col>
                     
           </Row>
-        <Row xs={1} md={imgs == '' ? 1 : 2} className='container'>
+        <Row xs={1} md={imgs == '' ? 1 : 2} className='container project-title mt-3'>
+    
             <Col className='project-project'>
             <Carousel className='shadow-lg'>
           {imgs.map((value, index)=>(
@@ -76,15 +77,16 @@ export function ProjectPage(props){
                     ''
                 }
                  
-                </Row>
+             </Row>
             </div>
             )
           }
           </Col>
+       
   
           </Row>
         <Row xs={1} md={1} className='container project-title'>
-          <Col className='project-project'>
+          <Col className='project-project mt-3'>
             {description.map((value,index)=>(
               <div>
               <Row>

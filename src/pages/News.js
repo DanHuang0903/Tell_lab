@@ -78,22 +78,23 @@ export function News(){
          
             
             
-                <Row xs={1} md={n.imgs == [] ? 1 : 2} className='container-fluid mt-5 mb-5'>
-                  <Col className={n.imgs == [] ? 'd-none' : ''}>
-                  <Carousel className='shadow-lg'>
-                  {n.imgs.map((value, index)=>(
-                    <Carousel.Item>
-                    <img
-                      className="d-block news-img w-100 h-50"
-                      src={value == ''? require('../img/logo.png'):value}
-                      alt={index}
-                      
-                    />
-                  </Carousel.Item>
-                 ))}
-                </Carousel>
-                </Col>
-                <Col className='mt-5'>
+                <Row xs={1} md={n.imgs != '' ? 2 : 1} className='container-fluid mt-5 mb-5'>
+                  
+                  <Col>
+                    <Carousel>
+                    {n.imgs.map((value, index)=>(
+                      <Carousel.Item>
+                      <img
+                        className="d-block news-img shadow-lg"
+                        src={value}
+                        alt={index}
+                        
+                      />
+                    </Carousel.Item>
+                   ))}
+                  </Carousel>
+                  </Col>
+                <Col className='mt-3'>
                   <p>{n.txt}</p>
                   <br/>
                   <p><a href={n.link.url} target='_blank' rel="noreferrer">{n.link.name}</a></p>

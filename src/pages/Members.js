@@ -29,19 +29,21 @@ export function Members(){
         return (
             <>
                 <Header />
+               
                 <div id='members-div' className='container-fluid'>
                 <Row id='all-members-header' className='shadow'>
                     <Col className='mt-5'>
                     <h1><img src={require('../img/logo.png')} alt='logo' className=''/> Team Members</h1>
                     </Col>
                 </Row>
-               <div id='member-main' className='container-fluid shadow pb-4'>
-                <div id='members-container' className='container-fluid'>
-                <Row className='mt-2 container-fluid'>
-                    <h4>Director</h4>
+               <div id='member-main' className='shadow pb-4'>
+                <Row className='container member-header mt-3'>
+                    <Col className='ms-2'>
+                    <h4 className='mt-3'>Director</h4>
                     <hr/>
+                    </Col>
                 </Row>
-                <Row xs={2} md={4} className="g-5">
+                <Row xs={2} md={4} className="g-4 project-title ms-2">
                 
                     {director.map((value,index)=>(
                         <Col key={index}>
@@ -65,12 +67,13 @@ export function Members(){
                         </Col>
                     ))}
                 </Row>
-                <Row className='mt-5 container-fluid'>
-                    <br/>
-                    <h4>Current Members</h4>
+                <Row className='container member-header'>
+                <Col className='ms-2'>
+                    <h4 className='mt-5'>Current Members</h4>
                     <hr/>
+                    </Col>
                 </Row>
-                <Row xs={2} md={4} className="g-5">
+                <Row xs={2} md={4} className="g-4 project-title ms-2">
                 
                     {current.map((value,index)=>(
                         <Col key={index}>
@@ -94,11 +97,13 @@ export function Members(){
                         </Col>
                     ))}
                 </Row>
-                <Row className='mt-5 container-fluid'>
-                    <h4>Alumni</h4>
+                <Row className='container member-header'>
+                <Col className='ms-2'>
+                    <h4 className='mt-5'>Alumni</h4>
                     <hr/>
+                    </Col>
                 </Row>
-                <Row xs={2} md={4} className="g-5">
+                <Row xs={2} md={4} className="g-4 project-title ms-2">
                 
                     {alumni.map((value,index)=>(
                         <Col key={index}>
@@ -116,7 +121,7 @@ export function Members(){
                         </Col>
                     ))}
                 </Row>
-                  </div>
+                 
                 </div>
                 </div>
             <Footer />
