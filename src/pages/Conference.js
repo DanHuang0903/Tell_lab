@@ -16,7 +16,7 @@ export function Conference(){
                     </h1>
                     <hr/>
                     {conf.pro.map((value,index)=>(
-                        <p>{value}</p>
+                        <p key={'c' + index}>{value}</p>
                         
                     ))}
                 </Col>

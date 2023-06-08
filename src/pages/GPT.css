@@ -1,0 +1,121 @@
+.paperGPT, .header, .about,.ideaGPT {
+    text-align: center;
+    overflow: hidden;
+  }
+#idea_gpt, #paper_gpt, #course_gpt{
+    padding-top: 5rem;
+}
+#m-nav{
+    text-align: start;
+}
+  .icons,.icons-f {
+    width: 2rem;
+  }
+  .icons:hover{
+    animation-name: hithere;
+    animation-duration: 1s;
+  }
+  
+  .icons-f {
+    animation: hithere 1s;
+  
+  }
+  
+  #paper_content, #idea_content{
+    overflow:scroll;
+    height: 30rem;
+  }
+  
+  #paper_form{
+    position: relative;
+  }
+  
+  .about_btn {
+    width: 8rem;
+  }
+  #paper_content, #idea_content{
+    padding: 2rem;
+    text-align: start;
+  }
+  
+  .slider {
+    width: 90%;
+  }
+  
+  
+  
+  @keyframes hithere {
+    30% { transform: scale(1.2); }
+    40%, 60% { transform: rotate(-20deg) scale(1.2); }
+    50% { transform: rotate(20deg) scale(1.2); }
+    70% { transform: rotate(0deg) scale(1.2); }
+    100% { transform: scale(1); }
+  }
+  
+  .footer-icons{
+    text-align: center;
+  }
+  .footer-text {
+    color:azure;
+    text-align: center;
+    font-size: small;
+  }
+  .footer-text a{
+    color: azure;
+    text-decoration: none;
+  }
+  
+  
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @media screen and (min-width:580px){
+    #about_content{
+      font-weight: 200;
+      font-size: 1.2rem;
+      margin: 3rem;
+      text-align: start;
+    }
+  
+    #paper_gpt{
+      height: 60rem;
+    }
+  
+    #idea_gpt{
+      height: 65rem;
+    }
+  
+    #side_panel{
+      margin-left: 0;
+    }
+  
+    #weeks_tab{
+      margin-left: 0;
+    }
+  
+  }
+  @media screen and (max-width:581px){
+
+    #about_content{
+      font-weight: 300;
+      font-size: 0.9rem;
+      margin: 0;
+      text-align: start;
+    }
+  
+    #paper_gpt{
+      height: 70rem;
+    }
+  
+    #idea_gpt {
+      height: 75rem;
+    }
+  
+  
+  }

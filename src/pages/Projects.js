@@ -17,16 +17,16 @@ export function Projects(){
 
           <div className='container-fluid' id='projects-div'>
           <Row id='project-header' className='shadow'>
-            <Col className='mt-5'>
+            <Col className='mt-5' key='p-logo'>
             <h1><img src={require('../img/logo.png')} alt='logo' className=''/> Projects</h1>
             </Col>
           </Row>
           {
-                projectInfo.map((p) => (
+                projectInfo.map((p,i) => (
              
-                <div className='shadow pb-3 projects-main'>
+                <div className='shadow pb-3 projects-main' key={'pi'+i}>
                   <Row xs={1} md={1} className='project-header container'>
-                    <Col className='ms-3'>
+                    <Col className='ms-3' key='p-name'>
                       <h3 className='mt-3'>
                         {p.name}
                         
@@ -38,10 +38,10 @@ export function Projects(){
                   </Row>
         
                 <Row xs={1} md={p.imgs==''?1:2} className='project-title container ms-1'>
-                  <Col>
+                  <Col key='p-img'>
                     <Carousel className='shadow-lg'>
                     {p.imgs.map((value, index)=>(
-                      <Carousel.Item>
+                      <Carousel.Item key={'p'+index}>
                       <img
                         className="d-block project-img w-100"
                         src={value}

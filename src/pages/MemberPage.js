@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import './members.css';
 
 export function MemberPage(){
     const [avatar, setAvatar] = useState('');
@@ -21,9 +22,8 @@ export function MemberPage(){
 
 
     useEffect(() => {
-        console.log(url);
         const member = memberInfo.find(m => m.url == url);
-        console.log(member.url);
+
         if(member){
             setAvatar(member.avatar);
             setBIO(member.BIO);
@@ -42,7 +42,7 @@ export function MemberPage(){
         
         <> 
             <Header />
-            
+            <div id='memberPage-main' className='mb-3'>
             <Row xs={2} md={2} className="container-fluid member-intro shadow m-0">
                 <Col>
                 <div  className='container mt-3'>
@@ -71,9 +71,9 @@ export function MemberPage(){
                 </Col>
             </Row>
             
-            <Row xs={1} md={1} className='container mt-5 member-content'>
+            <Row xs={1} md={1} className='container member-content'>
                 <Col>
-            <Row className='member-header-mobile ms-3 mb-3'>
+            <Row className='member-header-mobile ms-3 mt-4'>
             <div>
                         <p>{title}</p>
                         <p className={email == '' ? 'no-email' : 'has-email'}><a href={'mailto:' + email}><FontAwesomeIcon icon={faEnvelope} /> {email}</a></p>
@@ -81,7 +81,7 @@ export function MemberPage(){
                     </div>
             </Row>
       
-            <Row className="container ms-3">
+            <Row className="container ms-3 mt-3">
 
                     <h1>{BIO == ''? '' :'BIO'}</h1>
                     <p>{BIO}</p>
@@ -104,7 +104,7 @@ export function MemberPage(){
             </Col>
   
             </Row>
-            
+            </div>
         <Footer />
         </>
     )

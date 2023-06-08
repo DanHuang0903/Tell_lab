@@ -55,7 +55,7 @@ export function News(){
     return (
       <>
         <Header />
-        <div className='container-fluid'>
+        <div className='container-fluid' id='news-main'>
         <Row id='news-header' className='shadow'>
           <Col className='mt-5'>
           <h1><img src={require('../img/logo.png')} alt='logo' className='me-3 ms-3'/>NEWS</h1>

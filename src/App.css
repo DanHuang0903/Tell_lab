@@ -4,6 +4,19 @@
 }
 .carousel-control-prev, .carousel-control-next { visibility: hidden; }
 
+
+#main_nav{
+  position:fixed;
+  width: 100%;
+  z-index: 20;
+}
+
+#home-main,#projects-div,.project-single,#pub,#conf,#news-main,#m-nav-div{
+  padding-top: 2rem;
+}
+
+
+
 #home-page-m{
   overflow: hidden;
 }
@@ -115,9 +128,16 @@
 }
 
 
+
 .home-car-img {
   max-height: 40rem;
   height: auto;
+}
+
+.car-txt {
+  text-align: center;
+  font-size: 1rem;
+  margin-left: 3rem;
 }
 
 #twitter {
@@ -404,7 +424,9 @@
     margin: 3rem;
   }
   .project-single{
-    margin: 3rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
   }
 
   #member-main {
@@ -423,6 +445,8 @@
 }
 
 @media screen and (min-width:581px) and (max-width: 900px){
+
+  
   #lg-nav{
     display: none;
   }
@@ -711,6 +735,7 @@
 }
 
 @media screen and (max-width:580px){
+ 
   
   #lg-nav{
     display: none;
@@ -763,6 +788,10 @@
 #sm-nav.active span:last-of-type {
     transform: rotate(-45deg) translate(1px, -1px);
 
+}
+
+#m-nav{
+  padding-top: 4rem;
 }
 .navbar-btn {
   box-shadow: none;

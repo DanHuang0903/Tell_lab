@@ -16,7 +16,7 @@ export function Publications(){
                     </h1>
                     <hr/>
                     {conf.pro.map((value,index)=>(
-                        <p>{value.name}<a href={value.pdf} target='_blank' rel="noreferrer">[PDF]</a></p>
+                        <p key={'pi'+index}>{value.name}<a href={value.pdf} target='_blank' rel="noreferrer">[PDF]</a></p>
                         
                     ))}
                 </Col>

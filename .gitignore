@@ -24,3 +24,4 @@ yarn-error.log*
 scr/db.js
 # Local Netlify folder
 .netlify
+src/db.js

@@ -9,7 +9,12 @@
   overflow: hidden;
 
 }
-
+#members-div{
+    padding-top: 2rem;
+}
+ #memberPage-main {
+    padding-top: 3rem;
+ }
 
 .member-card{
     width: 13rem;
@@ -78,15 +83,20 @@
 @media screen and (min-width:581px){
     .member-header-mobile {
         visibility: hidden;
+        height: 0;
     }
 }
 @media screen and (max-width:580px){
+
     #member-header{
         display: none;
     }
     .member-intro img{
         height: 8rem;
         
+    }
+    .member-header-mobile,.memeber-content{
+        margin-top: 3rem;
     }
     .member-intro {
         height:auto;

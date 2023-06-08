@@ -78,7 +78,7 @@ export function Header()
 
   return (
     <>
-      <Navbar expand="lg" bg="dark" variant="dark" className='shadow'>
+      <Navbar expand="lg" bg="dark" variant="dark" className='shadow' id='main_nav'>
         <div className='ms-3 container-fluid'>
         
           <Navbar.Brand href='/home'>
@@ -93,82 +93,109 @@ export function Header()
           </button>
 
           <Nav id='lg-nav'>
-            <Nav.Link href="/home" className='me-3'>HOME</Nav.Link>
+            <Nav.Link href="/home" className='me-3' key='home-l'>HOME</Nav.Link>
             
-            <NavDropdown title="PROJECTS" className='me-3'>
-            <NavDropdown.Item href='/projects' className='nav-drop'>
+            <NavDropdown title="PROJECTS" className='me-3' key='project-l'>
+            <NavDropdown.Item href='/projects' className='nav-drop' key='project-all-l'>
                 ALL
                </NavDropdown.Item>
                <NavDropdown.Divider />
               {
                 projectInfo.map((p,i)=>(
-                  <NavDropdown.Item href={'/'+p.project} className='nav-drop'>{p.project}</NavDropdown.Item>
+                  <NavDropdown.Item href={'/'+p.project} className='nav-drop' key={'project-l'+i}>{p.project}</NavDropdown.Item>
                 ))
               }
        
             </NavDropdown>
-            <NavDropdown title="MEMBERS" className='me-3'>
-            <NavDropdown.Item href='/members' className='nav-drop'>
+            <NavDropdown title="MEMBERS" className='me-3' key='members-l'>
+            <NavDropdown.Item href='/members' className='nav-drop' key='members-all-l'>
               ALL
               </NavDropdown.Item>
               <NavDropdown.Divider />
               {
                 memberInfo.map((m,i) => (
-                  <NavDropdown.Item href={'/'+m.url} className='nav-drop'>{m.name}</NavDropdown.Item>
+                  <NavDropdown.Item href={'/'+m.url} className='nav-drop' key={'mpage-l'+i}>{m.name}</NavDropdown.Item>
                 ))
               }  
             </NavDropdown>
-            <NavDropdown title="SCHOLARLY PRODUCTS" className='me-3'>
-            <NavDropdown.Item href="/conference" className='nav-drop'>Selected Conference Presentations</NavDropdown.Item>
-              <NavDropdown.Item href="/publications" className='nav-drop'>
+            <NavDropdown title="SCHOLARLY PRODUCTS" className='me-3' key='scholar'>
+            <NavDropdown.Item href="/conference" className='nav-drop' key='conf-l'>Selected Conference Presentations</NavDropdown.Item>
+              <NavDropdown.Item href="/publications" className='nav-drop' key='pub-l'>
               Selected Refereed Publications
               </NavDropdown.Item>
             </NavDropdown>
            
-            <Nav.Link href="/news" className='me-3'>NEWS</Nav.Link>
-            <Nav.Link href="https://docs.google.com/forms/d/e/1FAIpQLScyRncCDfMSkvhmIeIly8HD5zYNB0v04CTQXVZBQ7iraVHLGg/viewform" target='_blank' className='me-0'>REGISTER</Nav.Link>
+            <Nav.Link href="/news" className='me-3' key='news-l'>NEWS</Nav.Link>
+            <NavDropdown title="AI PLAYGROUND" className='me-3' key='ai-l'>
+            <NavDropdown.Item href="/aboutgpt" className='nav-drop' key='ai-about-l'>About</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="/ideagpt" className='nav-drop' key='ai1-l'>
+              IdeaGPT
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/papergpt" className='nav-drop' key='ai2-l'>
+              PaperGPT
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/coursegpt" className='nav-drop' key='ai3-l'>
+              CourseGPT
+              </NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link href="https://docs.google.com/forms/d/e/1FAIpQLScyRncCDfMSkvhmIeIly8HD5zYNB0v04CTQXVZBQ7iraVHLGg/viewform" target='_blank' className='me-0' key='reg-l'>REGISTER</Nav.Link>
           </Nav>
           </div>
       </Navbar>
 
     
+      <div id='m-nav-div'>
+      <Nav className="border-bottom" id='m-nav'>
       
-      <Nav className="pt-3 border-bottom" id='m-nav'>
-      
-            <NavDropdown title="PROJECTS" className='me-3'>
-               <NavDropdown.Item href='/projects' className='nav-drop'>
+            <NavDropdown title="PROJECTS" className='me-3' key='project'>
+               <NavDropdown.Item href='/projects' className='nav-drop' key='p-all'>
                 ALL
                </NavDropdown.Item>
                <NavDropdown.Divider />
               {
                 projectInfo.map((p,i)=>(
-                  <NavDropdown.Item href={'/'+p.project} className='nav-drop'>{p.project}</NavDropdown.Item>
+                  <NavDropdown.Item href={'/'+p.project} className='nav-drop' key={'project' + i}>{p.project}</NavDropdown.Item>
                 ))
               }
        
             </NavDropdown>
-            <NavDropdown title="MEMBERS" className='me-3'>
-            <NavDropdown.Item href='/members' className='nav-drop'>
+            <NavDropdown title="MEMBERS" className='me-3' key='member'>
+            <NavDropdown.Item href='/members' className='nav-drop' key='m-all'>
               ALL
             </NavDropdown.Item>
             <NavDropdown.Divider />
             {
                 memberInfo.map((m,i) => (
-                  <NavDropdown.Item href={'/'+m.url} className='nav-drop'>{m.name}</NavDropdown.Item>
+                  <NavDropdown.Item href={'/'+m.url} className='nav-drop' key={'member' + i}>{m.name}</NavDropdown.Item>
                 ))
               }
               
             </NavDropdown>
-            <NavDropdown title="SCHOLARLY PRODUCTS" className='me-3'>
-              <NavDropdown.Item href="/conference" className='nav-drop'>Selected Conference Presentations</NavDropdown.Item>
-              <NavDropdown.Item href="/publications" className='nav-drop'>
+            <NavDropdown title="SCHOLARLY PRODUCTS" className='me-3' key='scholarly'>
+              <NavDropdown.Item href="/conference" className='nav-drop' key='conference'>Selected Conference Presentations</NavDropdown.Item>
+              <NavDropdown.Item href="/publications" className='nav-drop' key='publication'>
               Selected Refereed Publications
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="/news" className='me-3'>NEWS</Nav.Link>
-            <Nav.Link href="https://docs.google.com/forms/d/e/1FAIpQLScyRncCDfMSkvhmIeIly8HD5zYNB0v04CTQXVZBQ7iraVHLGg/viewform" target='_blank' className='me-3'>REGISTER</Nav.Link>
+            <Nav.Link href="/news" className='me-3' key='news'>NEWS</Nav.Link>
+            <NavDropdown title="AI PLAYGROUND" className='me-3' key='ai'>
+            <NavDropdown.Item href="/aboutgpt" className='nav-drop' key='ai-about'>About</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="/ideagpt" className='nav-drop' key='ai1'>
+              IdeaGPT
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/papergpt" className='nav-drop' key='ai2'>
+              PaperGPT
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/coursegpt" className='nav-drop' key='ai3'>
+              CourseGPT
+              </NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link href="https://docs.google.com/forms/d/e/1FAIpQLScyRncCDfMSkvhmIeIly8HD5zYNB0v04CTQXVZBQ7iraVHLGg/viewform" target='_blank' className='me-3' key='register'>REGISTER</Nav.Link>
             
           </Nav>
+          </div>
     </>
   )
 }
@@ -207,6 +234,8 @@ export function Footer(){
   )
 }
 
+
+// Home page
 export function Home(){
   const currents = [];
   news.map((n)=>{
@@ -218,8 +247,10 @@ export function Home(){
   
   return (
     <>
-    <Header />
-  <div id='home-page-m'>
+
+      <Header />
+
+     <div id='home-page-m'>
     <Row xs={1} md={1} id='home-car-m'>
           <Col>
           <Carousel className='shadow-lg'>
@@ -304,6 +335,7 @@ export function Home(){
       </Carousel>
       </Col>
       </Row>
+
       <Row xs={1} md={1}>
       <Col className='shadow mt-5 mb-5 p-4 pt-5'  id='home-row-m3'>
         <h2>{new Date().getFullYear()} News</h2>
@@ -332,7 +364,9 @@ export function Home(){
       </Carousel>
       </Col>
       </Row>
-      </div>
+    </div>
+
+  <div id='home-main'>
     <div id='home-header' className='container-fluid shadow p-0'>
       <Row xs={1} md={1} className="home-show">
    
@@ -357,7 +391,7 @@ export function Home(){
         />
 
         <Carousel.Caption>
-        <p>TELL Team at CAVE Virtual Reality Project</p>
+        <p className='car-txt'>TELL Team at CAVE Virtual Reality Project</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -368,7 +402,7 @@ export function Home(){
         />
 
         <Carousel.Caption>
-        <p>TELL Team at CAVE Virtual Reality Project</p>
+        <p className='car-txt'>TELL Team at CAVE Virtual Reality Project</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -379,7 +413,7 @@ export function Home(){
         />
 
         <Carousel.Caption>
-        <p>TELL Team at VR Clinic Project</p>
+        <p className='car-txt'>TELL Team at VR Clinic Project</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
@@ -450,6 +484,27 @@ export function Home(){
       </Col>
     </Row>
 
+    <Row xs={1} md={1} id='how-row2'>
+      <Col className='m-5 shadow p-5' id='about'>
+        <h2>AI Playground <img src={require('./img/ChatGPT_logo.png')} alt='logo' width='40'/></h2>
+        <hr/>
+
+          <div className='me-5'>
+           <h5>We built some tools using ChatGPT API to test how AI can help in educational activities</h5>
+            <br/>
+            The CourseGPT feature aims to assist K-12 teachers in generating comprehensive course content, particularly when they encounter knowledge gaps in certain subjects.<br/><br/>
+
+            PaperGPT helps high school and college students swiftly understand state-of-the-art research papers by extracting content in straightaway language.<br/><br/>
+
+            IdeaGPT is a valuable tool for college students to assess the originality of their research paper ideas. By utilizing IdeaGPT, students can determine if their proposed topic has been explored before and access relevant papers aligning with their research focus.<br/><br/>
+            <hr/>
+
+            <Button href="/aboutgpt" className='about_btn m-3'>AI Playground</Button>
+
+          </div>
+      </Col>
+    </Row>
+
     <Row xs={1} md={1} id='how-row3'>
       <Col className='m-5 shadow p-5' id='news'>
         <h2>{new Date().getFullYear()} News</h2>
@@ -477,6 +532,7 @@ export function Home(){
       </Col>
     </Row>
 
+    </div>
     </div>
     <Footer />
     </>
