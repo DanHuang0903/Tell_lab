@@ -2,7 +2,7 @@
     text-align: center;
     overflow: hidden;
   }
-#idea_gpt, #paper_gpt, #course_gpt{
+#idea_gpt, #paper_gpt, #course_gpt,#about_content{
     padding-top: 5rem;
 }
 #m-nav{

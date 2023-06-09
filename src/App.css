@@ -11,11 +11,38 @@
   z-index: 20;
 }
 
-#home-main,#projects-div,.project-single,#pub,#conf,#news-main,#m-nav-div{
-  padding-top: 2rem;
+#home-main,#projects-div,.project-single,#pub,#conf,#news-main,#home-page-m{
+  padding-top: 4rem;
 }
 
 
+#twitter-panel{
+  background-color: #212529;
+  height: 26rem;
+  animation: back 1.5s ease;
+  transform: translateX(88%);
+  
+}
+#twitter-scroll{
+  height: 24rem;
+  overflow: scroll;
+}
+
+#twitter-panel:hover{
+  animation: out 1.5s ease;
+  transform: translateX(5%);
+}
+
+
+@keyframes out{
+  0% { transform: translateX(88%);}
+  100%{transform: translateX(5%);}
+}
+
+@keyframes back{
+  0% { transform: translateX(5%);}
+  100%{transform: translateX(88%);}
+}
 
 #home-page-m{
   overflow: hidden;
@@ -180,7 +207,15 @@
 
 }
 
-
+@keyframes wobble {
+  0% { transform: translateX(0%); }
+  15% { transform: translateX(-25%) rotate(-5deg); }
+  30% { transform: translateX(20%) rotate(3deg); }
+  45% { transform: translateX(-15%) rotate(-3deg); }
+  60% { transform: translateX(10%) rotate(2deg); }
+  75% { transform: translateX(-5%) rotate(-1deg); }
+  100% { transform: translateX(0%); }
+}
 @keyframes rotate{
   0%{transform: rotate(0deg);}
   100%{transform: rotate(360deg);}
@@ -238,7 +273,7 @@
 
 
 #desc-img{
-  height: 10rem;
+  height: 12rem;
   text-align: center;
   
 }
@@ -253,34 +288,22 @@
   background-repeat: no-repeat;
   background-size: auto,40%;
   background-position: bottom right;
-  animation: back 1s ease;
-  transform: translateX(5rem);
+  box-shadow:0 .5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateX(2%);
+
 
 }
 
 #desc:hover{
-  animation: out 1s ease;
-  transform: translateX(0em);
-
+  box-shadow: 0rem 1rem 3rem rgba(0, 0, 0, 0.175);
 }
+
 #news:hover{
-  animation: out 1s ease;
-  transform: translateX(0em);
+  box-shadow: 0rem 1rem 3rem rgba(0, 0, 0, 0.175);
 }
 
-#how-row3,#how-row2,#how-row1{
+#how-row3,#how-row2,#how-row1,#how-row22{
   overflow: hidden;
-}
-
-
-@keyframes out{
-  0% { transform: translateX(5rem);}
-  100%{transform: translateX(0em);}
-}
-
-@keyframes back{
-  0% { transform: translateX(0rem);}
-  100%{transform: translateX(5em);}
 }
 
 #desc a{
@@ -292,20 +315,25 @@
 }
 
 
-#about{
+#about,#ai{
  
   background-image: url('./img/black-decor-sm.png');
   background-repeat: no-repeat;
   background-size: auto,40%;
   background-position: bottom right;
-  animation: back 1s ease;
-  transform: translateX(5rem);
+  box-shadow:0 .5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateX(2%);
 }
 #about:hover{
-  animation: out 1s ease;
-  transform: translateX(0em);
-
+  box-shadow: 0rem 1rem 3rem rgba(0, 0, 0, 0.175);
+  
 }
+
+#ai:hover{
+  box-shadow: 0rem 1rem 3rem rgba(0, 0, 0, 0.175);
+  
+}
+
 
 
 .project-detail{
@@ -457,6 +485,8 @@
   #m-nav.active{
     color: black;
     display: block;
+    z-index: 20;
+    background-color: white;
   }
   #m-nav.active a{
     color:#212529;
@@ -537,10 +567,6 @@
 }
 
 #twitter-m{
-  background-image: url('./img/small-decor-m2.png');
-  background-repeat: no-repeat;
-  background-size: 30%,auto;
-  background-position: top right;
   backface-visibility: hidden;
   overflow: hidden;
 }
@@ -552,19 +578,12 @@
 }
 
 #home-row-m2{
-  background-image: url('./img/small-decor-m.png');
-  background-repeat: no-repeat;
-  background-size: 30%,auto;
-  background-position: top right;
   backface-visibility: hidden;
   overflow: hidden;
 }
 
 #home-row-m3{
-  background-image: url('./img/small-decor-m2.png');
-  background-repeat: no-repeat;
-  background-size: 30%,auto;
-  background-position: top right;
+
   backface-visibility: hidden;
   overflow: hidden;
 }
@@ -747,10 +766,14 @@
   #m-nav.active{
     color: black;
     display: block;
+    z-index: 20;
+    background-color: white;
   }
+
   #m-nav.active a{
     color:#212529;
     font-size: small;
+
   }
   #sm-nav {
     width: 55px;
@@ -790,9 +813,7 @@
 
 }
 
-#m-nav{
-  padding-top: 4rem;
-}
+
 .navbar-btn {
   box-shadow: none;
   outline: none !important;
@@ -831,10 +852,7 @@
 }
 
 #twitter-m{
-  background-image: url('./img/small-decor-m2.png');
-  background-repeat: no-repeat;
-  background-size: 30%,auto;
-  background-position: top right;
+
   backface-visibility: hidden;
   overflow: hidden;
 }
@@ -846,19 +864,13 @@
 }
 
 #home-row-m2{
-  background-image: url('./img/small-decor-m.png');
-  background-repeat: no-repeat;
-  background-size: 30%,auto;
-  background-position: top right;
+
   backface-visibility: hidden;
   overflow: hidden;
 }
 
 #home-row-m3{
-  background-image: url('./img/small-decor-m2.png');
-  background-repeat: no-repeat;
-  background-size: 30%,auto;
-  background-position: top right;
+
   backface-visibility: hidden;
   overflow: hidden;
 }

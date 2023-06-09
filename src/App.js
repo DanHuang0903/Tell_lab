@@ -77,8 +77,9 @@ export function Header()
   }
 
   return (
-    <>
-      <Navbar expand="lg" bg="dark" variant="dark" className='shadow' id='main_nav'>
+    <div id='main_nav'>
+
+      <Navbar expand="lg" bg="dark" variant="dark" className='shadow' >
         <div className='ms-3 container-fluid'>
         
           <Navbar.Brand href='/home'>
@@ -196,7 +197,7 @@ export function Header()
             
           </Nav>
           </div>
-    </>
+    </div>
   )
 }
 
@@ -243,7 +244,13 @@ export function Home(){
       currents.push(n);
     }
 })
-    
+  
+window.addEventListener('scroll',()=>{
+  let top = document.querySelector('#desc-img').offsetTop
+  if (window.scrollY >= top) {    
+    document.querySelector('#twitter-panel-logo').style.animation = 'wobble 1s 3';
+  }
+})
   
   return (
     <>
@@ -272,7 +279,9 @@ export function Home(){
     </Row>
     <Row xs={1} md={1}>
       <Col>
-          <img src={require('./img/home-header-m.png')} alt='header' className='mt-5'/>
+          <div className='container'>
+            <img src={require('./img/home-header-m.png')} alt='header' className='mt-5 w-100'/>
+          </div>
       </Col>
     </Row>
 
@@ -311,6 +320,7 @@ export function Home(){
     </Row>
     <Row xs={1} md={1}>
     <Col className='shadow mt-5 p-4 pt-5' id='home-row-m2'>
+      <div className='container'>
         <h2>Reserch Projects</h2>
         <hr/>
         <Carousel slide={false} variant="dark">
@@ -326,6 +336,7 @@ export function Home(){
               <p>{value.subtitle}</p>
               <Button variant="dark" href={'/'+value.project}>TELL Me More</Button>
               </div>
+      
             </Col>
           </Row>
 
@@ -333,11 +344,35 @@ export function Home(){
 
       ))}
       </Carousel>
+      </div>
       </Col>
       </Row>
 
       <Row xs={1} md={1}>
+      <Col className='shadow mt-5 p-4 pt-5' id='ai-m'>
+        <div className='container'>
+        <h2><img id='ai_logo' src={require('./img/ChatGPT_logo.png')} alt='logo' width='35' className='pb-1'/> AI Playground </h2>
+          <hr/>
+          <div className='me-5'>
+           <h5>We built some tools using ChatGPT API to test how AI can help in educational activities</h5>
+            <br/>
+            <Button href="/coursegpt" className='btn btn-sm pt-0 pb-0 shadow'>CourseGPT</Button> feature aims to assist K-12 teachers in generating comprehensive course content, particularly when they encounter knowledge gaps in certain subjects.<br/><br/>
+
+            <Button href="/papergpt" className='btn btn-sm pt-0 pb-0 shadow'>PaperGPT</Button> helps high school and college students swiftly understand state-of-the-art research papers by extracting content in straightaway language.<br/><br/>
+
+            <Button href="/ideagpt" className='btn btn-sm pt-0 pb-0 shadow'>IdeaGPT</Button> is a valuable tool for college students to assess the originality of their research paper ideas. By utilizing IdeaGPT, students can determine if their proposed topic has been explored before and access relevant papers aligning with their research focus.<br/><br/>
+            <hr/>
+
+            <Button href="/aboutgpt" className='about_btn btn-dark m-3'>AI Playground</Button>
+
+          </div>
+      </div>
+      </Col>
+    </Row>
+
+      <Row xs={1} md={1}>
       <Col className='shadow mt-5 mb-5 p-4 pt-5'  id='home-row-m3'>
+      <div className='container'>
         <h2>{new Date().getFullYear()} News</h2>
         <hr/>
         <Carousel slide={false} variant="dark">
@@ -347,6 +382,7 @@ export function Home(){
         <Carousel.Item>
           <Row xs={1} md={2}>
             <Col>
+           
                 <img src={(value.imgs!='')?value.imgs[0]:require('./img/logo.png')} alt={value.name} className='w-100 home-projects'/>
             </Col>
             <Col className='mt-5'>
@@ -362,6 +398,7 @@ export function Home(){
         
       ))}
       </Carousel>
+      </div>
       </Col>
       </Row>
     </div>
@@ -424,13 +461,15 @@ export function Home(){
     <div className='container-fluid' id='home-content'>
     
     <Row xs={1} md={1}  id='desc-img' className='justify-content-md-center'>
-      <Col className='m-5'>
-       <h2> <img src={require('./img/logo.png')} alt='name'/>Technology to Enhance Learning Lab</h2>
+      <Col className='mt-5 ps-3'>
+       <h4 > <img src={require('./img/logo.png')} alt='name' /> Technology to Enhance Learning Lab</h4>
+       <br/>
       </Col>
+   
     </Row>
     
     <Row xs={1} md={1} id='how-row1'>
-      <Col className='m-5 shadow p-5' id='desc'>
+      <Col className='m-5 p-5' id='desc'>
       <h2>About Us</h2>
       <hr/>
       <Row xs={1} md={2}>
@@ -445,22 +484,27 @@ export function Home(){
       <p><img src={require('./img/logo.png')} alt='logo'/>Novel Technologies for Instructions and Learning</p>
       </Col>
       <Col>
-        <Row>
-        <h5><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className='icons'> <path fill='#00acee' d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> <b>TELL Recent Tweets</b></h5>
+      <div className='container row mt-3 pt-4 pd-4 shadow rounded' id='twitter-panel'>
+        <div className='col-md-1'>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className='icons' id='twitter-panel-logo'> <path fill='#00acee' d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+        </div>
+        <div className='col-md-10 ms-3 ps-3 pe-3' id='twitter-scroll'>
+          <Row id='twitter-list' className='shadow rounded'>
+            <TwitterTimelineEmbed className='twitter-body-m'
+              sourceType="profile" 
+              userId={"1219141583292989441"} 
+            />
         </Row>
-        <Row id='twitter' className='shadow rounded'>
-        <TwitterTimelineEmbed className='twitter-body'
-          sourceType="profile" 
-          userId={"1219141583292989441"} 
-        />
-        </Row>
+        </div>
+          
+        </div>
       </Col>
       </Row>
       </Col>
 
     </Row>
     <Row xs={1} md={1} id='how-row2'>
-      <Col className='m-5 shadow p-5' id='about'>
+      <Col className='m-5 p-5' id='about'>
         <h2>Reserch Projects</h2>
         <hr/>
         <Carousel slide={false} variant="dark">
@@ -484,29 +528,29 @@ export function Home(){
       </Col>
     </Row>
 
-    <Row xs={1} md={1} id='how-row2'>
-      <Col className='m-5 shadow p-5' id='about'>
-        <h2>AI Playground <img src={require('./img/ChatGPT_logo.png')} alt='logo' width='40'/></h2>
+    <Row xs={1} md={1} id='how-row22'>
+      <Col className='m-5 p-5' id='ai'>
+        <h2><img id='ai_logo' src={require('./img/ChatGPT_logo.png')} alt='logo' width='35' className='pb-1'/> AI Playground </h2>
         <hr/>
 
           <div className='me-5'>
            <h5>We built some tools using ChatGPT API to test how AI can help in educational activities</h5>
             <br/>
-            The CourseGPT feature aims to assist K-12 teachers in generating comprehensive course content, particularly when they encounter knowledge gaps in certain subjects.<br/><br/>
+            <Button href="/coursegpt" className='btn btn-sm pt-0 pb-0 shadow'>CourseGPT</Button> feature aims to assist K-12 teachers in generating comprehensive course content, particularly when they encounter knowledge gaps in certain subjects.<br/><br/>
 
-            PaperGPT helps high school and college students swiftly understand state-of-the-art research papers by extracting content in straightaway language.<br/><br/>
+            <Button href="/papergpt" className='btn btn-sm pt-0 pb-0 shadow'>PaperGPT</Button> helps high school and college students swiftly understand state-of-the-art research papers by extracting content in straightaway language.<br/><br/>
 
-            IdeaGPT is a valuable tool for college students to assess the originality of their research paper ideas. By utilizing IdeaGPT, students can determine if their proposed topic has been explored before and access relevant papers aligning with their research focus.<br/><br/>
+            <Button href="/ideagpt" className='btn btn-sm pt-0 pb-0 shadow'>IdeaGPT</Button> is a valuable tool for college students to assess the originality of their research paper ideas. By utilizing IdeaGPT, students can determine if their proposed topic has been explored before and access relevant papers aligning with their research focus.<br/><br/>
             <hr/>
 
-            <Button href="/aboutgpt" className='about_btn m-3'>AI Playground</Button>
+            <Button href="/aboutgpt" className='about_btn m-3 btn-dark'>AI Playground</Button>
 
           </div>
       </Col>
     </Row>
 
     <Row xs={1} md={1} id='how-row3'>
-      <Col className='m-5 shadow p-5' id='news'>
+      <Col className='m-5 p-5' id='news'>
         <h2>{new Date().getFullYear()} News</h2>
         <hr/>
         <Carousel slide={false} variant="dark">

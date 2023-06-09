@@ -8,10 +8,10 @@ export function AboutGPT(){
     return(
         <div className='about'>
             <Header/>
-            <div className='containter m-5 p-4 shadow'>
-            <div id='about_content'>
+            <div className='containter m-4 ps-3 pe-3 shadow' id='about_content'>
+            <div>
             <h3> 
-                AI Playground <img src={require('../img/ChatGPT_logo.png')} alt='logo' width='40'/>
+            <img src={require('../img/ChatGPT_logo.png')} alt='logo' width='35' className='pb-1'/> AI Playground 
             </h3>
                 This web application is designed to showcase the potential applications of embedded chatGPT in the field of education. Within this application, two distinct use cases are demonstrated. <br/><br/>
                 Firstly, the purpose of IdeaGPT is to provide a valuable tool for college students aiming to evaluate the originality of their research paper ideas. By utilizing IdeaGPT, students can determine whether their proposed research topic has been previously explored or if similar work has been conducted. IdeaGPT will furnish relevant papers and studies that align with the student's research focus.  <br/><br/>
@@ -22,8 +22,8 @@ export function AboutGPT(){
             </div>
             <hr/>
             <div>
-            <Button href="/ideagpt" className='about_btn m-3'> IdeaGPT </Button>
-            <Button href="/papergpt" className='about_btn m-3'> PaperGPT </Button>
+            <Button href="/ideagpt" className='about_btn btn-dark m-3'> IdeaGPT </Button>
+            <Button href="/papergpt" className='about_btn btn-dark m-3'> PaperGPT </Button>
             <Button href="/coursegpt" className='about_btn m-3'> CourseGPT </Button>
             </div>
             </div>

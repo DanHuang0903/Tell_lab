@@ -15,10 +15,10 @@ export function Projects(){
         <>
           <Header />
 
-          <div className='container-fluid' id='projects-div'>
+          <div className='container-fluid mb-4' id='projects-div'>
           <Row id='project-header' className='shadow'>
             <Col className='mt-5' key='p-logo'>
-            <h1><img src={require('../img/logo.png')} alt='logo' className=''/> Projects</h1>
+            <h1><img src={require('../img/logo.png')} alt='logo'/> Projects</h1>
             </Col>
           </Row>
           {
