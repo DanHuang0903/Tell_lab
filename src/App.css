@@ -18,18 +18,18 @@
 
 #twitter-panel{
   background-color: #212529;
-  height: 26rem;
-  animation: back 1.5s ease;
+  height: 28rem;
   transform: translateX(88%);
   
 }
 #twitter-scroll{
-  height: 24rem;
+  height: 26rem;
+
   overflow: scroll;
 }
 
 #twitter-panel:hover{
-  animation: out 1.5s ease;
+  animation: out 1s ease;
   transform: translateX(5%);
 }
 
@@ -333,7 +333,6 @@
   box-shadow: 0rem 1rem 3rem rgba(0, 0, 0, 0.175);
   
 }
-
 
 
 .project-detail{

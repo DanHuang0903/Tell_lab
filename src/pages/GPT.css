@@ -37,7 +37,8 @@
     padding: 2rem;
     text-align: start;
   }
-  
+
+
   .slider {
     width: 90%;
   }
@@ -79,8 +80,8 @@
     #about_content{
       font-weight: 200;
       font-size: 1.2rem;
-      margin: 3rem;
       text-align: start;
+      padding: 4rem;
     }
   
     #paper_gpt{
@@ -105,7 +106,7 @@
     #about_content{
       font-weight: 300;
       font-size: 0.9rem;
-      margin: 0;
+      margin-right: 2rem;
       text-align: start;
     }
   

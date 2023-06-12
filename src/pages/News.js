@@ -63,16 +63,16 @@ export function News(){
         </Row>
         <Tabs className='mt-5'>
           <TabList className='p-2 news-tab'>
-            {newsAll.map((n)=>(
-              <Tab>{n.year}</Tab>
+            {newsAll.map((n,i)=>(
+              <Tab key={i}>{n.year}</Tab>
             ))}
             
           </TabList>
 
-           {newsAll.map((n)=>(
-            <TabPanel className='news-content'>
-              {n.news.map((n) => (
-                <>
+           {newsAll.map((n,i)=>(
+            <TabPanel className='news-content' key={i}>
+              {n.news.map((n,i) => (
+                <div key={i}>
                 <h3 className='mt-5'>{n.name}</h3>
                 <p className='news-date'>{'By ' + n.author + ' - ' + n.date}</p>
          
@@ -83,7 +83,7 @@ export function News(){
                   <Col>
                     <Carousel>
                     {n.imgs.map((value, index)=>(
-                      <Carousel.Item>
+                      <Carousel.Item key={index}>
                       <img
                         className="d-block news-img shadow-lg"
                         src={value}
@@ -102,7 +102,7 @@ export function News(){
                 </Col>
             </Row>
             <hr/>
-            </>
+            </div>
               ))}
             
             

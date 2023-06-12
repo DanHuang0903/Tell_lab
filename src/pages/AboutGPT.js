@@ -8,8 +8,8 @@ export function AboutGPT(){
     return(
         <div className='about'>
             <Header/>
-            <div className='containter m-4 ps-3 pe-3 shadow' id='about_content'>
-            <div>
+            <div className='' id='about_content'>
+            <div className='container m-4 pt-4'>
             <h3> 
             <img src={require('../img/ChatGPT_logo.png')} alt='logo' width='35' className='pb-1'/> AI Playground 
             </h3>
@@ -21,7 +21,7 @@ export function AboutGPT(){
                 Then, the CourseGPT feature aims to assist K-12 teachers in generating comprehensive course content, particularly when they encounter knowledge gaps in certain subjects.
             </div>
             <hr/>
-            <div>
+            <div className='container'>
             <Button href="/ideagpt" className='about_btn btn-dark m-3'> IdeaGPT </Button>
             <Button href="/papergpt" className='about_btn btn-dark m-3'> PaperGPT </Button>
             <Button href="/coursegpt" className='about_btn m-3'> CourseGPT </Button>
