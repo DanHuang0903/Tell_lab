@@ -105,7 +105,7 @@ export function PaperGPT(){
         <div className='paperGPT'>
         <Header/>
             <div className='container shadow mt-4 mb-4' id='paper_gpt'>
-              <div className='text-start p-3 bg-dark shadow text-light' >
+              <div className='text-start p-5 bg-dark shadow text-light' >
                 <h3 className='display-6'>PaperGPT</h3>
                 <p><small>Get a comprehensive idea of a paper with straightaway language.</small></p>
                 <hr/>

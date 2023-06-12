@@ -303,19 +303,19 @@ function getContent(data,i){
   }
 
   return (
-    <div className="App">
+    <div className="courseGPT">
       <Header/>
-      <div className='container mb-4' id='course_gpt'>
-        <div className='container mt-4 row w-100' >
-          <div className='col-xs-12 col-md-12 shadow bg-dark text-light p-4 text-start' >
+      <div className='container mb-4 mt-4 shadow' id='course_gpt'>
+       
+          <div className='shadow bg-dark text-light p-5 text-start' >
           <h3 className='display-6'>CourseGPT</h3>
           <p><small>Get a comprehensive course structure.</small></p>
           <hr/>
         </div>
-        </div>
-        <div className='container row w-100'>
-        <div id='side_panel' className='col-xs-12 col-md-3 shadow bg-dark text-light' style={{height: '40rem'}}>
-          <div id='course_setting' className='mb-4 p-3'style={{height: '6rem'}}>
+       
+        <div className='container row w-100 g-0'>
+        <div id='side_panel' className='col-xs-12 col-md-3 shadow bg-dark text-light p-4' style={{height: '40rem'}}>
+          <div id='course_setting' className='mb-4'style={{height: '6rem'}}>
             <h5>Course Setting</h5>
             
             <Button variant="primary" id='toggle_btn' className='d-none' onClick={regenerate}> RESET
@@ -524,6 +524,7 @@ function getContent(data,i){
          
         </div>
         </div>
+        
         <Footer/>
     </div>
   

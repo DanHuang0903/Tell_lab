@@ -109,7 +109,7 @@ export function IdeaGPT(){
         <div className='ideaGPT'>
         <Header/>
             <div className='container shadow mt-4 mb-4' id='idea_gpt'>
-            <div className='text-start p-3 bg-dark shadow text-light'>
+            <div className='text-start p-5 bg-dark shadow text-light'>
                 <h3 className='display-6'>IdeaGPT</h3>
                 <p><small>Check if your idea is original.<br/>See who has been working on your idea.</small></p>
                 <hr/>
