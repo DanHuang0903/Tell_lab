@@ -3,7 +3,7 @@
     overflow: hidden;
   }
 #idea_gpt, #paper_gpt, #course_gpt,#about_content{
-    padding-top: 5rem;
+    margin-top: 7rem;
 }
 #m-nav{
     text-align: start;

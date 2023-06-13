@@ -40,6 +40,7 @@ export function PaperGPT(){
         }
         event.preventDefault();
         setSubmit(true);
+        document.querySelector('#paper_content').classList.add('d-none');
         let message = 'Can you extract this paper for college students, including all the concepts and methods, algorithm used in the paper:' + name + '.(' + year + ').' + name + '.' + journal;
 
         const newMessage = {
@@ -95,7 +96,8 @@ export function PaperGPT(){
               }]
             );
             setExtract(false);
-            setContent(data.choices[0].message.content)
+            setContent(data.choices[0].message.content);
+            document.querySelector('#paper_content').classList.remove('d-none');
             })
           
         }
@@ -104,8 +106,8 @@ export function PaperGPT(){
     return(
         <div className='paperGPT'>
         <Header/>
-            <div className='container shadow mt-4 mb-4' id='paper_gpt'>
-              <div className='text-start p-5 bg-dark shadow text-light' >
+            <div className='container shadow mb-4 g-0' id='paper_gpt'>
+              <div className='text-start p-4 bg-dark shadow text-light' >
                 <h3 className='display-6'>PaperGPT</h3>
                 <p><small>Get a comprehensive idea of a paper with straightaway language.</small></p>
                 <hr/>
@@ -170,11 +172,13 @@ export function PaperGPT(){
                 </Button>
             </Form>
             </div>
-            <div className='container mt-4' id='paper_content'>
-            {extract? <TypingIndicator content='I am extracting the paper'/>:null}
-            {subPaper.map((s,i)=>{
-              return s.includes((''))? <p className='content' key={i}>{s}</p> : <p className='content'>{s}</p>
-            })}
+            <div className='container m-4'>
+              {extract? <TypingIndicator content='I am extracting the paper'/>:null}
+                <div  id='paper_content'>
+                  {subPaper.map((s,i)=>{
+                    return s.includes((''))? <p className='content' key={i}>{s}</p> : <p className='content'>{s}</p>
+                  })}
+                </div>
             </div>
             </div>
         <Footer/>

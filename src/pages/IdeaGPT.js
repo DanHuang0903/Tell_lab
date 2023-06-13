@@ -35,7 +35,7 @@ export function IdeaGPT(){
       }
     
       event.preventDefault();
-      setContent('');
+      document.querySelector('#idea_content').classList.add('d-none');
       let message = 'The idea is ' + idea + ', please list ' + amount + ' paper(s) with a simple summary, which discuss same idea and is(are) published within ' + year + ' years.'
 
       const newMessage = {
@@ -99,7 +99,8 @@ export function IdeaGPT(){
               }]
             );
             setExtract(false);
-            setContent(data.choices[0].message.content)
+            setContent(data.choices[0].message.content);
+            document.querySelector('#idea_content').classList.remove('d-none');
             })
           
         }
@@ -108,8 +109,9 @@ export function IdeaGPT(){
     return(
         <div className='ideaGPT'>
         <Header/>
-            <div className='container shadow mt-4 mb-4' id='idea_gpt'>
-            <div className='text-start p-5 bg-dark shadow text-light'>
+            <div className='container mb-4 g-0 shadow' id='idea_gpt'>
+            <div className='container text-start bg-dark shadow text-light p-4'>
+
                 <h3 className='display-6'>IdeaGPT</h3>
                 <p><small>Check if your idea is original.<br/>See who has been working on your idea.</small></p>
                 <hr/>
@@ -165,12 +167,15 @@ export function IdeaGPT(){
                     Check
                 </Button>
             </Form>
+         
             </div>
-            <div className='container m-4' id='idea_content'>
+            <div className='container m-4'>
             {extract? <TypingIndicator content='I am looking for the related paper'/>:null}
-            {subPaper.map((s,i)=>{
-              return s.includes((''))? <p className='content' key={i}>{s}</p> : <p className='content'>{s}</p>
-            })}
+                <div id='idea_content'>
+                    {subPaper.map((s,i)=>{
+                    return s.includes((''))? <p className='content' key={i}>{s}</p> : <p className='content'>{s}</p>
+                    })}
+                </div>
             </div>
             </div>
         <Footer/>

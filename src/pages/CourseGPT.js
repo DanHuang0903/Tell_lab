@@ -305,9 +305,10 @@ function getContent(data,i){
   return (
     <div className="courseGPT">
       <Header/>
-      <div className='container mb-4 mt-4 shadow' id='course_gpt'>
+      <div className='container mb-4 shadow g-0' id='course_gpt'>
        
-          <div className='shadow bg-dark text-light p-5 text-start' >
+          <div className='container shadow bg-dark text-light p-4 text-start' >
+
           <h3 className='display-6'>CourseGPT</h3>
           <p><small>Get a comprehensive course structure.</small></p>
           <hr/>
