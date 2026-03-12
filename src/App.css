@@ -146,6 +146,21 @@
   100%{transform: translateY(100%);opacity: 1}
 }
 
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes grow {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
 .home-decor {
   height: 35rem;
 
@@ -469,6 +484,7 @@
   .news-content{
     margin: 3rem;
   }
+
 }
 
 @media screen and (min-width:581px) and (max-width: 900px){

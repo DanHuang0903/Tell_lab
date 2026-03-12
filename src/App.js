@@ -1,7 +1,6 @@
 import './App.css';
 import { Link } from 'react-router-dom';
 import { peopleImg } from './JSON/people.js';
-import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -236,7 +235,9 @@ export function Footer(){
 }
 
 
-// Home page
+
+/*************************** Home page ******************************/
+
 export function Home(){
   const currents = [];
   news.map((n)=>{
@@ -249,15 +250,18 @@ window.addEventListener('scroll',()=>{
   let top = document.querySelector('#desc-img').offsetTop;
   let bottom = document.querySelector('#about').offsetTop;
   let twitterPanel = document.querySelector('#twitter-panel');
+  let twitterPanelLogo = document.querySelector('#twitter-panel-mu-logo');
 
   twitterPanel.addEventListener('mouseover', ()=>{
     document.querySelector('#twitter-panel-logo').style.display='none';
     document.querySelector('#twitter-logo-col').className='';
+    twitterPanelLogo.style.animation = 'hithere 2s ease 1s'
   });
 
   twitterPanel.addEventListener('mouseout', ()=>{
       document.querySelector('#twitter-panel-logo').style.display = 'block';
       document.querySelector('#twitter-logo-col').className='col-md-1';
+      twitterPanelLogo.style.animation = ''
     })
 
   if ((window.scrollY >= top) && (window.scrollY < bottom - 100)) {    
@@ -267,7 +271,7 @@ window.addEventListener('scroll',()=>{
   }
 })
 
-console.log(window.innerWidth);
+
 if(window.innerWidth < 581){
   window.addEventListener('scroll', ()=>{
     let about = document.querySelector('#about-m');
@@ -320,6 +324,8 @@ if(window.innerWidth < 581){
     }
   })
 }
+
+
   
   return (
     <>
@@ -566,7 +572,7 @@ if(window.innerWidth < 581){
             />
             </div>
             <div className='col-md-2'>
-              <img src={require('./img/logo-reverse.png')} alt='logo' style={{position:'absolute', bottom:'5%', right:'10%'}} />
+              <img id='twitter-panel-mu-logo' src={require('./img/logo-reverse.png')} alt='logo' style={{position:'absolute', bottom:'5%', right:'10%'}} />
             </div>
         </Row>
         </div>
@@ -585,14 +591,15 @@ if(window.innerWidth < 581){
       {projectInfo.map((value,index)=>(
         <Carousel.Item key={index}>
           <Row xs={1} md={2}>
-            <Col>
-                <img src={value.imgs!=''?value.imgs[0]:require('./img/project-default.png')} alt={value.name} className='home-projects'/>
-            </Col>
-            <Col className='mt-4'>
+            <Col className='mt-4 text-start '>
               <h4 className='project-title'>{value.name}</h4>
               <p>{value.subtitle}</p>
               <Button variant="dark" href={'/'+value.project}>TELL Me More</Button>
             </Col>
+            <Col>
+                <img src={value.imgs!=''?value.imgs[0]:require('./img/project-default.png')} alt={value.name} className='home-projects'/>
+            </Col>
+            
           </Row>
 
         </Carousel.Item>
@@ -633,14 +640,15 @@ if(window.innerWidth < 581){
         
         <Carousel.Item key={index}>
           <Row xs={1} md={2}>
-            <Col>
-                <img src={(value.imgs!='')?value.imgs[0]:require('./img/logo.png')} alt={value.name} className='home-projects'/>
-            </Col>
             <Col className='mt-4'>
               <h4 className='project-title'>{value.name}</h4>
               <p>{value.txt}</p>
               <Button variant="dark" href={'/news'}>All TELL News</Button>
             </Col>
+            <Col>
+                <img src={(value.imgs!='')?value.imgs[0]:require('./img/logo.png')} alt={value.name} className='home-projects'/>
+            </Col>
+            
           </Row>
 
         </Carousel.Item>
