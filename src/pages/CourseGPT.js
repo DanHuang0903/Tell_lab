@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { API_KEY } from '../db.js';
+
 
 
 export function CourseGPT() {
@@ -219,10 +219,9 @@ async function sendToGPT(userMessage){
       'model': 'gpt-3.5-turbo',
       'messages' : [systemRole, ...sendMessage]
     }
-    await fetch('https://api.openai.com/v1/chat/completions',{
+    await fetch('/.netlify/functions/chat',{
       method: 'POST',
       headers:{
-        "Authorization":"Bearer " + API_KEY,
         "Content-Type": "application/json"
       },
       body:JSON.stringify(apiRequest)

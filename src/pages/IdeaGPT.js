@@ -6,7 +6,6 @@ import { Header,Footer } from '../App.js';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import RangeSlider from 'react-bootstrap-range-slider';
-import { API_KEY } from '../db.js';
 import { TypingIndicator } from '@chatscope/chat-ui-kit-react'
 
 export function IdeaGPT(){
@@ -82,10 +81,9 @@ export function IdeaGPT(){
             'model': 'gpt-3.5-turbo',
             'messages' : [systemRole, ...sendMessage]
           }
-          await fetch('https://api.openai.com/v1/chat/completions',{
+          await fetch('/.netlify/functions/chat',{
             method: 'POST',
             headers:{
-              "Authorization":"Bearer " + API_KEY,
               "Content-Type": "application/json"
             },
             body:JSON.stringify(apiRequest)
