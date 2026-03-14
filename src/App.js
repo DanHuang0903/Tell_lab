@@ -566,10 +566,11 @@ if(window.innerWidth < 581){
         <div className='col-md-10 ms-3 ps-3 pe-3' id='twitter-scroll'>
           <Row id='twitter-list' className='shadow rounded'>
             <div className='col-md-9'>
-            <TwitterTimelineEmbed className='twitter-body-m'
-              sourceType="profile" 
-              userId={"1219141583292989441"} 
+            <TwitterTimelineEmbed
+              sourceType="profile"
+              screenName="MizzouTell"
             />
+
             </div>
             <div className='col-md-2'>
               <img id='twitter-panel-mu-logo' src={require('./img/logo-reverse.png')} alt='logo' style={{position:'absolute', bottom:'5%', right:'10%'}} />

@@ -78,7 +78,7 @@ export function IdeaGPT(){
             content: 'Explain all concepts like I am a teacher.'
           }
           const apiRequest = {
-            'model': 'gpt-3.5-turbo',
+            'model': 'gpt-4o-mini',
             'messages' : [systemRole, ...sendMessage]
           }
           await fetch('/.netlify/functions/chat',{
@@ -90,6 +90,24 @@ export function IdeaGPT(){
           }).then((data)=>{
             return data.json();
           }).then((data)=>{
+            console.log("API response:", data);
+
+            if (!data.choices || !data.choices[0] || !data.choices[0].message) {
+              const errMsg =
+                data?.error?.message ||
+                data?.error ||
+                "OpenAI returned an unexpected response.";
+          
+              setRequest([
+                ...userMessage,
+                {
+                  message: `Error: ${errMsg}`,
+                  sender: "ChatGPT",
+                },
+              ]);
+              setExtract(false);
+              return;
+            }
             setRequest(
               [...userMessage, {
                 message:data.choices[0].message.content,

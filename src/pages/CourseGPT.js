@@ -198,6 +198,7 @@ function updateWeeks(weeks){
 
 
 // Send message to GPT to generate Syllabus
+/** 
 async function sendToGPT(userMessage){
     let sendMessage = userMessage.map((m,i)=>{
       let role = '';
@@ -216,7 +217,7 @@ async function sendToGPT(userMessage){
       content: 'Explain all concepts like I am a teacher.'
     }
     const apiRequest = {
-      'model': 'gpt-3.5-turbo',
+      'model': 'gpt-4o-mini',
       'messages' : [systemRole, ...sendMessage]
     }
     await fetch('/.netlify/functions/chat',{
@@ -228,6 +229,7 @@ async function sendToGPT(userMessage){
     }).then((data)=>{
       return data.json();
     }).then((data)=>{
+
       setMessages(
         [...userMessage, {
           message:data.choices[0].message.content,
@@ -246,11 +248,116 @@ async function sendToGPT(userMessage){
     })
     
   }
+**/
+async function sendToGPT(userMessage) {
+  let sendMessage = userMessage.map((m) => {
+    let role = "";
+    if (m.sender === "ChatGPT") {
+      role = "assistant";
+    } else {
+      role = "user";
+    }
+    return {
+      role: role,
+      content: m.message,
+    };
+  });
 
+  const systemRole = {
+    role: "system",
+    content: "Explain all concepts like I am a teacher.",
+  };
+
+  const apiRequest = {
+    model: "gpt-4o-mini",
+    messages: [systemRole, ...sendMessage],
+  };
+
+  try {
+    const response = await fetch("/.netlify/functions/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(apiRequest),
+    });
+
+    const text = await response.text();
+    let data;
+
+    try {
+      data = JSON.parse(text);
+    } catch (e) {
+      console.error("Non-JSON response:", text);
+      setMessages([
+        ...userMessage,
+        {
+          message: `Server error: ${text}`,
+          sender: "ChatGPT",
+        },
+      ]);
+      setTyping(false);
+      return;
+    }
+
+    console.log("API response:", data);
+
+    if (!response.ok || !data.choices || !data.choices[0]?.message?.content) {
+      const errMsg =
+        data?.error?.message ||
+        data?.error ||
+        `Request failed with status ${response.status}`;
+
+      setMessages([
+        ...userMessage,
+        {
+          message: `Error: ${errMsg}`,
+          sender: "ChatGPT",
+        },
+      ]);
+      setTyping(false);
+      return;
+    }
+
+    const reply = data.choices[0].message.content;
+
+    setMessages([
+      ...userMessage,
+      {
+        message: reply,
+        sender: "ChatGPT",
+      },
+    ]);
+
+    setTyping(false);
+    setSyllabus(reply);
+    setTabDisable(false);
+
+    if (reply.includes("Cannot change the weeks")) {
+      document.getElementById("s-content").className = "d-none";
+    } else {
+      document.getElementById("s-content").className = "";
+    }
+
+    document.getElementById("syllabus-btn").className =
+      "mt-3 mb-3 btn btn-primary";
+  } catch (error) {
+    console.error("Fetch error:", error);
+    setMessages([
+      ...userMessage,
+      {
+        message: `Error: ${error.message}`,
+        sender: "ChatGPT",
+      },
+    ]);
+    setTyping(false);
+  }
+}
 
 
 // Send message to GPT to generate weekly content
- async function sendToGPTForWeek(userMessage, index){
+/** 
+async function sendToGPTForWeek(userMessage, index){
     let sendMessage = userMessage.map((m,i)=>{
       let role = '';
       if(m.sender === 'ChatGPT'){
@@ -268,19 +375,19 @@ async function sendToGPT(userMessage){
       content: 'Explain all concepts like I am a teacher.'
     }
     const apiRequest = {
-      'model': 'gpt-3.5-turbo',
+      'model': 'gpt-4o-mini',
       'messages' : [systemRole, ...sendMessage]
     }
-    await fetch('https://api.openai.com/v1/chat/completions',{
+    await fetch('/.netlify/functions/chat',{
       method: 'POST',
       headers:{
-        "Authorization":"Bearer " + API_KEY,
         "Content-Type": "application/json"
       },
       body:JSON.stringify(apiRequest)
     }).then((data)=>{
       return data.json();
     }).then((data)=>{
+
       setMessages(
         [...userMessage, {
           message:data.choices[0].message.content,
@@ -293,7 +400,107 @@ async function sendToGPT(userMessage){
     })
     
   }
+**/
+// Send message to GPT to generate weekly content
+async function sendToGPTForWeek(userMessage, index) {
+  let sendMessage = userMessage.map((m) => {
+    let role = "";
+    if (m.sender === "ChatGPT") {
+      role = "assistant";
+    } else {
+      role = "user";
+    }
+    return {
+      role: role,
+      content: m.message,
+    };
+  });
 
+  const systemRole = {
+    role: "system",
+    content: "Explain all concepts like I am a teacher.",
+  };
+
+  const apiRequest = {
+    model: "gpt-4o-mini",
+    messages: [systemRole, ...sendMessage],
+  };
+
+  try {
+    const response = await fetch("/.netlify/functions/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(apiRequest),
+    });
+
+    const text = await response.text();
+    let data;
+
+    try {
+      data = JSON.parse(text);
+    } catch (e) {
+      console.error("Non-JSON response:", text);
+      setMessages([
+        ...userMessage,
+        {
+          message: `Server error: ${text}`,
+          sender: "ChatGPT",
+        },
+      ]);
+      setTyping(false);
+      return;
+    }
+
+    console.log("API response:", data);
+
+    if (!response.ok || !data.choices || !data.choices[0]?.message?.content) {
+      const errMsg =
+        data?.error?.message ||
+        data?.error ||
+        `Request failed with status ${response.status}`;
+
+      setMessages([
+        ...userMessage,
+        {
+          message: `Error: ${errMsg}`,
+          sender: "ChatGPT",
+        },
+      ]);
+      setTyping(false);
+      return;
+    }
+
+    const reply = data.choices[0].message.content;
+
+    setMessages([
+      ...userMessage,
+      {
+        message: reply,
+        sender: "ChatGPT",
+      },
+    ]);
+
+    setTyping(false);
+    tabId[index] = {
+      current: index,
+      content: reply,
+      disabled: false,
+    };
+    setTabDisable(false);
+  } catch (error) {
+    console.error("Fetch error:", error);
+    setMessages([
+      ...userMessage,
+      {
+        message: `Error: ${error.message}`,
+        sender: "ChatGPT",
+      },
+    ]);
+    setTyping(false);
+  }
+}
 
   const subContent = syllabus.split(/\r\n|\r|\n/);
   const weekContent=[];
