@@ -21,24 +21,28 @@ import './custom.scss';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <Routes key='routes'>
-      <Route path='/' element={<App />} key='entr'/>
-      <Route path='/home' element={<Home />} key='home-p'/>
-      <Route path='/members' element={<Members />} key='members-p'/>
-      <Route path='/news' element={<News />} key='news-p'/>
-      <Route path='/conference' element={<Conference />} key='conf-p'/>
-      <Route path='/publications' element={<Publications />} key='pub-p'/>
-      <Route path='/:url' element={<MemberPage />} />
-      <Route path='/projects' element={<Projects />} key='project-p'/>
-      <Route path='/aboutgpt' element={<AboutGPT />} key='ai-p'/>
-      <Route path='/coursegpt' element={<CourseGPT />} key='ai1-p'/>
-      <Route path='/papergpt' element={<PaperGPT />} key='ai2-p'/>
-      <Route path='/ideagpt' element={<IdeaGPT />} key='ai3-p'/>
-      {projectInfo.map((p,i)=>(
-                  <Route path={'/'+p.project} element={<ProjectPage name={p.project} key={'p'+i}/>}></Route>
-                ))
-      }
+  <Routes>
+      <Route path='/' element={<App />} key='entr' />
+      <Route path='/home' element={<Home />} key='home-p' />
+      <Route path='/members' element={<Members />} key='members-p' />
+      <Route path='/news' element={<News />} key='news-p' />
+      <Route path='/conference' element={<Conference />} key='conf-p' />
+      <Route path='/publications' element={<Publications />} key='pub-p' />
+      <Route path='/:url' element={<MemberPage />} key='member-page' />
+      <Route path='/projects' element={<Projects />} key='project-p' />
+      <Route path='/aboutgpt' element={<AboutGPT />} key='ai-p' />
+      <Route path='/coursegpt' element={<CourseGPT />} key='ai1-p' />
+      <Route path='/papergpt' element={<PaperGPT />} key='ai2-p' />
+      <Route path='/ideagpt' element={<IdeaGPT />} key='ai3-p' />
+      {projectInfo.map((p, i) => (
+        <Route
+          key={p.project || i}
+          path={'/' + p.project}
+          element={<ProjectPage name={p.project} />}
+        />
+      ))}
     </Routes>
+
   </BrowserRouter>
 );
 
